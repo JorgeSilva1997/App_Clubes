@@ -54,7 +54,8 @@ public class Login extends AppCompatActivity {
               User user = dataSnapshot.getValue(User.class);
               if (PASS.equals(user.getPassword()))
               {
-                  Toast.makeText(Login.this, "Bem vindo", Toast.LENGTH_SHORT).show();
+                  Intent intent = new Intent(Login.this, Main.class);
+                  startActivity(intent);
               }
               else
                   {
