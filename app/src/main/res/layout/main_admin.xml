@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Main"
+    tools:context=".Main_admin"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -38,25 +38,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/welcome"
-            android:text="Bem vindo "
+            android:text="Bem vindo à pagina de administrador"
             android:layout_below="@id/imgLogo"
             android:textColor="#FFFFFF"
             android:layout_marginTop="50dp"
             android:textSize="18dp"
             android:fontFamily="sans-serif-smallcaps"
-            android:layout_marginLeft="75dp"
+            android:layout_marginLeft="25dp"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txtTipoUser"
+            android:id="@+id/txtTipoAdmin"
             android:text=""
             android:textColor="#FFFFFF"
             android:textColorHint="#FFFFFF"
-            android:layout_toRightOf="@id/welcome"
-            android:layout_below="@id/imgLogo"
-            android:layout_marginTop="50dp"
+            android:layout_below="@id/welcome"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
             android:textSize="18dp"
             android:fontFamily="sans-serif-smallcaps" />
 
@@ -65,12 +65,12 @@
     <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
 
 
-                        <!-- BOTÕES -->
+    <!-- BOTÕES -->
 
     <RelativeLayout
         android:id="@+id/secondLayout"
         android:layout_below="@id/firstLayout"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="75dp"
         android:layout_marginRight="75dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -112,38 +112,13 @@
 
         <Button
             android:id="@+id/btn5"
-            android:onClick="btnPerfil"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignBottom="@+id/btn4"
             android:layout_alignParentRight="true"
             android:background="@drawable/btn_border"
             android:textColor="#FFFFFF"
-            android:text="Perfil"/>
-
-        <Button
-            android:id="@+id/btn7"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_alignEnd="@+id/btn4"
-            android:layout_alignRight="@+id/btn4"
-            android:layout_below="@+id/btn4"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/btn_border"
-            android:textColor="#FFFFFF"
             android:text="Atletas"/>
-
-        <Button
-            android:id="@+id/btn8"
-            android:layout_width="140dp"
-            android:layout_height="100dp"
-            android:layout_alignBottom="@+id/btn7"
-            android:layout_alignLeft="@+id/btn5"
-            android:layout_alignStart="@+id/btn5"
-            android:background="@drawable/btn_border"
-            android:textColor="#FFFFFF"
-            android:text="Direção"/>
-
 
     </RelativeLayout>
 

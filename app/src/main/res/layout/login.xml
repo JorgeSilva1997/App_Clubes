@@ -58,14 +58,14 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_user"
             android:id="@+id/imgUser"
-            android:layout_alignRight="@id/NumberId"
+            android:layout_alignRight="@id/mail"
             android:layout_marginTop="9dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/NumberId"
-            android:hint="Number "
+            android:id="@+id/mail"
+            android:hint="Email "
             android:textColorHint="#FFFFFF"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FFFFFF"
@@ -83,13 +83,13 @@
             android:src="@drawable/ic_pass"
             android:id="@+id/imgPass"
             android:layout_alignRight="@id/pass"
-            android:layout_below="@id/NumberId"
+            android:layout_below="@id/mail"
             android:layout_marginTop="23dp"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/NumberId"
+            android:layout_below="@id/mail"
             android:layout_marginTop="15dp"
             android:id="@+id/pass"
             android:hint="Password "

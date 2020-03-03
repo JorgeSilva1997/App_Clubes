@@ -4,39 +4,91 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Regist">
+    tools:context=".Regist"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="25dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgLogo"
+            android:layout_marginLeft="35dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo"
+
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="60dp">
+
 
     <!-- NAME -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/name"
+
+        android:hint="Your Full Name"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:inputType="text"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:hint="Your Full Name"/>
+        android:layout_marginLeft="15dp"/>
+
     <!-- PASSWORD -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/password"
         android:layout_below="@+id/name"
+        android:hint="Password"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:inputType="textPassword"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:hint="Password"/>
+        android:layout_marginLeft="15dp"/>
     <!-- MAIL -->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/email"
         android:layout_below="@+id/password"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:inputType="textEmailAddress"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:hint="Email Address"/>
     <!-- NUMBER -->
     <EditText
@@ -45,9 +97,11 @@
         android:id="@+id/numberId"
         android:layout_below="@+id/email"
         android:inputType="number"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="15dp"
+        android:textColorHint="#FFFFFF"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
         android:hint="Mobile Number"
         android:maxLength="9"/>
 
@@ -58,13 +112,15 @@
         android:id="@+id/btnregist"
         android:onClick="btnregist"
         android:layout_below="@+id/numberId"
-        android:hint="Regist"
-        android:inputType="text"
-        android:textSize="16dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"/>
+        android:hint=" Regist "
+        android:textSize="18dp"
+        android:fontFamily="monospace"
+        android:textColorHint="#FFFFFF"
+        android:background="@drawable/btn_border"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"/>
 
+    </RelativeLayout>
 
 </RelativeLayout>

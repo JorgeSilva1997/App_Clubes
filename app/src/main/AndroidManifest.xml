@@ -17,6 +17,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".Regist" />
+        <activity android:name=".Main" />
+        <activity android:name=".Perfil" />
+        <activity android:name=".Main_admin" />
+        <activity android:name=".Regist_Admin" />
     </application>
 
 </manifest>

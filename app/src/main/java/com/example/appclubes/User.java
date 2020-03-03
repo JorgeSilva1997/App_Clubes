@@ -8,13 +8,13 @@ public class User {
     private String name;
     private String password;
     private String email;
-    private String tipo;
+    private int tipo;
 
     public User() {
 
     }
 
-    public User(String numberId, String name, String password, String email, String tipo){
+    public User(String numberId, String name, String password, String email, int tipo){
 
         this.numberId = numberId;
         this.name = name;
@@ -22,6 +22,7 @@ public class User {
         this.email = email;
         this.tipo = tipo;
     }
+
 
     public String getNumberId() {
         return numberId;
@@ -51,10 +52,11 @@ public class User {
         this.email = email;
     }
 
-    public String getTipo() {
+    public int getTipo() {
         return tipo;
     }
-    public void setTipo(String tipo){
+
+    public void setTipo(int tipo){
         this.tipo = tipo;
     }
 }

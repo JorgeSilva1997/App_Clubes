@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Perfil"
+    android:background="@mipmap/fundo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/LayoutTitle"
+        android:layout_marginTop="75dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="Seu perfil"
+            android:textColor="#FFFFFF"
+            android:textSize="42dp"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/LayoutTitle"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp">
+
+        <!-- NOME -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoName"
+            android:text="Nome: "
+            android:textColor="#FFFFFF"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/infoName" />
+
+        <!-- EMAIL -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoMail"
+            android:text="Email: "
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_below="@id/infoName"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/mail"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/infoMail"
+            android:layout_below="@id/name"
+            android:layout_marginTop="12dp" />
+
+        <!-- NUMERO -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoNumber"
+            android:text="Número: "
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_below="@id/infoMail"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberId"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/infoNumber"
+            android:layout_below="@id/mail"
+            android:layout_marginTop="12dp" />
+
+        <!-- PASSWORD -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/infoPass"
+            android:text="Password: "
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_below="@id/infoNumber"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pass"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:layout_toRightOf="@id/infoPass"
+            android:layout_below="@id/numberId"
+            android:layout_marginTop="12dp"
+            android:inputType="textPassword"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -4,10 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,10 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Text;
-
-
-public class Main extends AppCompatActivity {
+public class Main_admin extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private DatabaseReference reference;
@@ -33,19 +27,15 @@ public class Main extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.main_admin);
 
         auth = FirebaseAuth.getInstance();
-        tipoUser = (TextView)findViewById(R.id.txtTipoUser);
+        tipoUser = (TextView)findViewById(R.id.txtTipoAdmin);
         reference = FirebaseDatabase.getInstance().getReference();
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
-        //////////////////////////////////////////////////////
-
 
         // Isto serve para receber o email do user logado no momento
         String email = auth.getCurrentUser().getEmail().toString();
@@ -71,7 +61,7 @@ public class Main extends AppCompatActivity {
 
         ////////////////////////////////////////////////////
 
-        getMenuInflater().inflate(R.menu.menu, menu);
+        getMenuInflater().inflate(R.menu.menu_admin, menu);
         return true;
     }
 
@@ -84,10 +74,16 @@ public class Main extends AppCompatActivity {
         {
             Logout();
         }
-        else
-            {
-                //NOTHING
-            }
+        else if (id == R.id.perfil)
+        {
+            Intent intent = new Intent(Main_admin.this, Perfil.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.addAdmin)
+        {
+            Intent intent = new Intent(Main_admin.this, Regist_Admin.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -96,14 +92,8 @@ public class Main extends AppCompatActivity {
     {
         auth.signOut();
 
-        Intent intent = new Intent(Main.this, Login.class);
+        Intent intent = new Intent(Main_admin.this, Login.class);
         startActivity(intent);
         finish();
-    }
-
-    public void btnPerfil(View view)
-    {
-        Intent intent = new Intent(Main.this, Perfil.class);
-        startActivity(intent);
     }
 }
