@@ -1,4 +1,4 @@
-package com.example.appclubes;
+package com.example.appclubes.CONF;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;

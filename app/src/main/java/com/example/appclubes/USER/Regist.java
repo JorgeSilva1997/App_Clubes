@@ -1,4 +1,4 @@
-package com.example.appclubes;
+package com.example.appclubes.USER;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +9,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appclubes.CONF.ConfiguraçãoFirebase;
+import com.example.appclubes.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -19,7 +21,7 @@ import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Regist_Admin extends AppCompatActivity {
+public class Regist extends AppCompatActivity {
 
     EditText name, password, email, numberId;
     private FirebaseAuth auth;
@@ -75,7 +77,7 @@ public class Regist_Admin extends AppCompatActivity {
             user.setPassword(password.getText().toString());
             user.setEmail(email.getText().toString());
             user.setNumberId(numberId.getText().toString());
-            user.setTipo(1);
+            user.setTipo(0);
 
             registar();
         }
@@ -84,7 +86,7 @@ public class Regist_Admin extends AppCompatActivity {
     private void registar()
     {
         auth = ConfiguraçãoFirebase.getAuth();
-        auth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnCompleteListener(Regist_Admin.this, new OnCompleteListener<AuthResult>() {
+        auth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword()).addOnCompleteListener(Regist.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -92,27 +94,27 @@ public class Regist_Admin extends AppCompatActivity {
                 {
                     registarUser(user);
                     finish();
-
+                    auth.signOut();
                 }
                 else
-                {
-                    String erro = "";
+                    {
+                        String erro = "";
 
-                    try {
-                        throw task.getException();
-                    } catch (FirebaseAuthWeakPasswordException e){
-                        erro = "Senha fraca ou demasiado pequena. Combine letras e números no mínimo com 8 caracteres!";
-                    } catch (FirebaseAuthInvalidCredentialsException e){
-                        erro = "O email é inválido!";
-                    } catch (FirebaseAuthUserCollisionException e){
-                        erro = "Email já existente!";
-                    } catch (Exception e) {
-                        erro = "Erro ao registar!";
-                        e.printStackTrace();
+                        try {
+                            throw task.getException();
+                        } catch (FirebaseAuthWeakPasswordException e){
+                            erro = "Senha fraca ou demasiado pequena. Combine letras e números no mínimo com 8 caracteres!";
+                        } catch (FirebaseAuthInvalidCredentialsException e){
+                            erro = "O email é inválido!";
+                        } catch (FirebaseAuthUserCollisionException e){
+                            erro = "Email já existente!";
+                        } catch (Exception e) {
+                            erro = "Erro ao registar!";
+                            e.printStackTrace();
+                        }
+
+                        Toast.makeText(Regist.this, "Erro: " + erro, Toast.LENGTH_LONG).show();
                     }
-
-                    Toast.makeText(Regist_Admin.this, "Erro: " + erro, Toast.LENGTH_LONG).show();
-                }
 
             }
         });
@@ -125,16 +127,13 @@ public class Regist_Admin extends AppCompatActivity {
             reference = ConfiguraçãoFirebase.getReference().child("users");
             // O push é equivalente à Primary_Key
             reference.push().setValue(user);
-            Toast.makeText(Regist_Admin.this, "Registado com sucesso!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Regist.this, "Registado com sucesso!", Toast.LENGTH_LONG).show();
             return true;
 
         } catch (Exception e) {
-            Toast.makeText(Regist_Admin.this, "Erro ao registar!", Toast.LENGTH_LONG).show();
+            Toast.makeText(Regist.this, "Erro ao registar!", Toast.LENGTH_LONG).show();
             e.printStackTrace();
             return false;
         }
     }
-
-
 }
-

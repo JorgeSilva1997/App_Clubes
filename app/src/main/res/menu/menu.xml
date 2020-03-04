@@ -8,4 +8,10 @@
         android:title="Sair"
         app:showAsAction="collapseActionView" />
 
+    <item
+        android:id="@+id/infoProg"
+        android:icon="@drawable/info"
+        app:showAsAction="ifRoom"
+        android:title="" />
+
 </menu>

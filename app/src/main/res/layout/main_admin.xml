@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".Main_admin"
+    tools:context=".ADMIN.Main_admin"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -112,6 +112,7 @@
 
         <Button
             android:id="@+id/btn5"
+            android:onClick="btnAtleta"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignBottom="@+id/btn4"

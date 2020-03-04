@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Regist"
+    tools:context=".USER.Regist"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -112,7 +112,7 @@
         android:id="@+id/btnregist"
         android:onClick="btnregist"
         android:layout_below="@+id/numberId"
-        android:hint=" Regist "
+        android:hint=" Adicionar "
         android:textSize="18dp"
         android:fontFamily="monospace"
         android:textColorHint="#FFFFFF"

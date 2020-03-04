@@ -1,14 +1,23 @@
-package com.example.appclubes;
+package com.example.appclubes.ADMIN;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appclubes.ATLETA.AddAtleta;
+import com.example.appclubes.ESCALAO.AddEscalao;
+import com.example.appclubes.Info;
+import com.example.appclubes.Login;
+import com.example.appclubes.Perfil;
+import com.example.appclubes.R;
+import com.example.appclubes.USER.Main;
+import com.example.appclubes.USER.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,6 +83,11 @@ public class Main_admin extends AppCompatActivity {
         {
             Logout();
         }
+        else if (id == R.id.addEscalao)
+        {
+            Intent intent = new Intent(Main_admin.this, AddEscalao.class);
+            startActivity(intent);
+        }
         else if (id == R.id.perfil)
         {
             Intent intent = new Intent(Main_admin.this, Perfil.class);
@@ -82,6 +96,11 @@ public class Main_admin extends AppCompatActivity {
         else if (id == R.id.addAdmin)
         {
             Intent intent = new Intent(Main_admin.this, Regist_Admin.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.infoProg)
+        {
+            Intent intent = new Intent(Main_admin.this, Info.class);
             startActivity(intent);
         }
 
@@ -95,5 +114,11 @@ public class Main_admin extends AppCompatActivity {
         Intent intent = new Intent(Main_admin.this, Login.class);
         startActivity(intent);
         finish();
+    }
+
+    public void btnAtleta(View view)
+    {
+        Intent intent = new Intent(Main_admin.this, AddAtleta.class);
+        startActivity(intent);
     }
 }

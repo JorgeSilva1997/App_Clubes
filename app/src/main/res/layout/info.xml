@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/fundo">
+
+
+    <RelativeLayout
+        android:id="@+id/firstLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/frase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dados dos programadores:"
+            android:textColor="#FFFFFF"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace"
+            android:gravity="center_horizontal"/>
+
+        <TextView
+            android:id="@+id/NAME"
+            android:layout_below="@id/frase"
+            android:layout_marginTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome:"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace" />
+
+        <TextView
+            android:id="@+id/Andre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/NAME"
+            android:layout_below="@id/frase"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="2dp"
+            android:text="André Félix"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:textStyle="normal"
+            android:fontFamily="serif-monospace" />
+
+        <TextView
+            android:id="@+id/Jorge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/NAME"
+            android:layout_below="@id/Andre"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="2dp"
+            android:text="Jorge Silva"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:textStyle="normal"
+            android:fontFamily="serif-monospace" />
+
+        <TextView
+            android:id="@+id/fraseMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:layout_below="@id/Jorge"
+            android:layout_marginTop="15dp"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            android:fontFamily="serif-monospace" />
+
+        <TextView
+            android:id="@+id/MAIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/fraseMail"
+            android:layout_below="@id/Jorge"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="2dp"
+            android:text="XPTO@xpto.pt"
+            android:textColor="#FFFFFF"
+            android:textSize="22dp"
+            android:textStyle="normal"
+            android:fontFamily="serif-monospace" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/firstLayout">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/logotipo"
+        android:alpha=".45"/>
+</RelativeLayout>
+
+</RelativeLayout>

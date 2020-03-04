@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ATLETA.AddAtleta"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="25dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgLogo"
+            android:id="@+id/info1"
+            android:layout_marginLeft="35dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo"
+
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/info"
+            android:text="Insira um novo escalão"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/info1"
+            android:layout_marginTop="75dp"
+            android:gravity="center_horizontal"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textStyle="bold"/>
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="60dp">
+
+
+        <!-- ESCALÃO -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Escalao"
+
+            android:hint="Nome do escalão"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="text"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <!-- BOTÃO -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddEscalao"
+            android:onClick="btnAddEscalao"
+            android:layout_below="@+id/Escalao"
+            android:hint=" Adicionar "
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:textColorHint="#FFFFFF"
+            android:background="@drawable/btn_border"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

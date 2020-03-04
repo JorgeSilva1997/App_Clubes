@@ -3,7 +3,6 @@ package com.example.appclubes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -11,6 +10,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appclubes.ADMIN.Main_admin;
+import com.example.appclubes.CONF.ConfiguraçãoFirebase;
+import com.example.appclubes.CONF.Preferences;
+import com.example.appclubes.USER.Main;
+import com.example.appclubes.USER.Regist;
+import com.example.appclubes.USER.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -42,8 +47,10 @@ public class Login extends AppCompatActivity {
 
         if (UserLog())
         {
-            Intent intent = new Intent(Login.this, Main.class);
-            startActivity(intent);
+
+                Intent intent = new Intent(Login.this, Main.class);
+                startActivity(intent);
+
         }
         else
             {
@@ -111,9 +118,19 @@ public class Login extends AppCompatActivity {
 
                             if (tipoUserInt == 1) {
                                 Intent intent = new Intent(Login.this, Main_admin.class);
+
+                                Preferences preferences = new Preferences(Login.this);
+                                preferences.GuardarCredencias(user.getEmail(), user.getPassword());
+                                finish();
+
                                 startActivity(intent);
                             } else if (tipoUserInt == 0){
                                 Intent intent = new Intent(Login.this, Main.class);
+
+                                Preferences preferences = new Preferences(Login.this);
+                                preferences.GuardarCredencias(user.getEmail(), user.getPassword());
+                                finish();
+
                                 startActivity(intent);
                             } else{
                                 Toast.makeText(Login.this, "Erro!" + tipoUser, Toast.LENGTH_LONG).show();
