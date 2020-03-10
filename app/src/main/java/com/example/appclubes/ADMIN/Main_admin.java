@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appclubes.ATLETA.AddAtleta;
+import com.example.appclubes.CAMPEONATO.AddCampeonato;
+import com.example.appclubes.CONVOCATORIA.AddConvocatoria;
+import com.example.appclubes.EQUIPA.AddEquipa;
 import com.example.appclubes.ESCALAO.AddEscalao;
 import com.example.appclubes.Info;
 import com.example.appclubes.Login;
@@ -103,6 +106,16 @@ public class Main_admin extends AppCompatActivity {
             Intent intent = new Intent(Main_admin.this, Info.class);
             startActivity(intent);
         }
+        else if (id == R.id.addComp)
+        {
+            Intent intent = new Intent(Main_admin.this, AddCampeonato.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.addEquipa)
+        {
+            Intent intent = new Intent(Main_admin.this, AddEquipa.class);
+            startActivity(intent);
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -119,6 +132,12 @@ public class Main_admin extends AppCompatActivity {
     public void btnAtleta(View view)
     {
         Intent intent = new Intent(Main_admin.this, AddAtleta.class);
+        startActivity(intent);
+    }
+
+    public void btnConvocatoria(View view)
+    {
+        Intent intent = new Intent(Main_admin.this, AddConvocatoria.class);
         startActivity(intent);
     }
 }

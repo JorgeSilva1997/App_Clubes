@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.appclubes">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/adbcampo"
@@ -24,6 +26,10 @@
         <activity android:name=".ATLETA.AddAtleta" />
         <activity android:name=".ESCALAO.AddEscalao" />
         <activity android:name=".Info" />
+        <activity android:name=".CAMPEONATO.AddCampeonato" />
+        <activity android:name=".EQUIPA.AddEquipa" />
+        <activity android:name=".CONVOCATORIA.AddConvocatoria" />
+        <activity android:name=".CONVOCATORIA.ObterAtletas" />
     </application>
 
 </manifest>

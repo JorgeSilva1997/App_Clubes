@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CONVOCATORIA.AddConvocatoria"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="25dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgLogo"
+            android:layout_marginLeft="35dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome"
+            android:text="Nova convocatória"
+            android:layout_below="@id/imgLogo"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="25dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_centerHorizontal="true"
+            />
+
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="35dp">
+
+        <!-- SPINNER PARA ESCALÃO -->
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerEscalao"
+            android:layout_marginTop="10dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+        <!-- SPINNER PARA Campeonato -->
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerCampeonato"
+            android:layout_marginTop="12dp"
+            android:layout_below="@id/spinnerEscalao"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"/>
+
+        <!-- BOTÃO PARA POP-UP DOS ATLETAS -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAtletas"
+            android:onClick="btnAtletas"
+            android:layout_below="@id/spinnerCampeonato"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:text="Escolher Atletas"/>
+
+        <!-- LOCAL DO JOGO -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/localJogo"
+            android:layout_below="@id/btnAtletas"
+            android:layout_marginTop="12dp"
+            android:hint="Local do jogo"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="text"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" />
+
+        <!-- HORA e DIA do JOGO -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateJogo"
+            android:layout_below="@id/localJogo"
+            android:layout_marginTop="12dp"
+            android:hint="Hora Jogo (00h00 01/01/2001)"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="text"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" />
+
+        <!-- HORA ANTECIPADA -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dateAntesJogo"
+            android:layout_below="@id/dateJogo"
+            android:layout_marginTop="12dp"
+            android:hint="Hora Pavilhão (00h00)"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="text"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp" />
+
+
+        <!-- BOTÃO PARA ADICIONAR -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddConvocatoria"
+            android:onClick="btnAddConvocatoria"
+            android:layout_below="@+id/dateAntesJogo"
+            android:hint=" Criar Convocatoria "
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:textColorHint="#FFFFFF"
+            android:background="@drawable/btn_border"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

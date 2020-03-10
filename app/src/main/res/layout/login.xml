@@ -102,29 +102,16 @@
             android:layout_marginLeft="75dp"/>
 
         <!-- FIM DO CAMPO USERNAME -->
-        <CheckBox
-            android:id="@+id/checkbox"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Remember me"
-            android:textColor="#FFFFFF"
-            android:buttonTint="#FFFFFF"
-            android:layout_below="@id/pass"
-            android:fontFamily="sans-serif-smallcaps"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="75dp"
-            android:layout_marginTop="8dp"/>
         <!-- CHECK BOX -->
 
         <!-- BOTÕES -->
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/checkbox"
+            android:layout_below="@id/pass"
             android:id="@+id/btnLogin"
             android:onClick="btnLogin"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="45dp"
             android:hint=" Log In "
             android:fontFamily="monospace"
             android:textColorHint="#FFFFFF"

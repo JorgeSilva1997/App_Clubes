@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AddAtleta extends AppCompatActivity {
 
@@ -38,6 +39,7 @@ public class AddAtleta extends AppCompatActivity {
     private Atleta atleta;
     private Spinner spinner;
     private Escalao escalao;
+    private String xpto1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +51,15 @@ public class AddAtleta extends AppCompatActivity {
 
         NomeAtleta = (EditText)findViewById(R.id.NameAtleta);
 
-
-        spinner = (Spinner)findViewById(R.id.spinner);
-        spinner.setAdapter(new ArrayAdapter<String>(this,R.layout.support_simple_spinner_dropdown_item,items()));
+        preenchespinner();
     }
 
-    private void ObterEscaloes(DataSnapshot snapshot, final ArrayList<String> escaloes)
+    private void ObterEscaloes()
     {
 
+        spinner = findViewById(R.id.spinner);
+
+        final ArrayList<String> escaloes = new ArrayList<>();
 
         reference.child("escalao").addValueEventListener(new ValueEventListener() {
             @Override
@@ -66,6 +69,11 @@ public class AddAtleta extends AppCompatActivity {
                 {
                     String NameEscalao = postSnapshot.child("nome").getValue().toString();
                     escaloes.add(NameEscalao);
+
+
+                    ArrayAdapter dados = new ArrayAdapter(AddAtleta.this,  R.layout.support_simple_spinner_dropdown_item, escaloes);
+                    dados.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    spinner.setAdapter(dados);
 
                 }
 
@@ -78,44 +86,12 @@ public class AddAtleta extends AppCompatActivity {
         });
     }
 
-    public ArrayList<String> items()
-    {
-        final ArrayList<String> escaloes = new ArrayList<>();
-
-        reference.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                ObterEscaloes(dataSnapshot, escaloes);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                ObterEscaloes(dataSnapshot, escaloes);
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        return escaloes;
-    }
 
     public void btnAddAtleta(View view)
     {
         String nameAtleta = NomeAtleta.getText().toString();
         // Falta obter o escalao pelo o SPINNER
-        // String nameEscalao =
+        //String nameEscalao = xpto;
 
         //validating inputs
         if (TextUtils.isEmpty(nameAtleta)) {
@@ -127,10 +103,13 @@ public class AddAtleta extends AppCompatActivity {
             atleta = new Atleta();
 
             atleta.setNome(NomeAtleta.getText().toString());
+            atleta.setEscalao(xpto1);
+            //Toast.makeText(AddAtleta.this, xpto1, Toast.LENGTH_SHORT).show();
 
             addAtleta();
         }
     }
+
 
     private void addAtleta()
     {
@@ -150,5 +129,26 @@ public class AddAtleta extends AppCompatActivity {
             e.printStackTrace();
             return false;
         }
+    }
+
+    private void preenchespinner()
+    {
+        //items();
+
+        ObterEscaloes();
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String xpto = (String)parent.getItemAtPosition(position);
+                xpto1 = xpto;
+                Toast.makeText(AddAtleta.this, xpto + " selecionado", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
     }
 }

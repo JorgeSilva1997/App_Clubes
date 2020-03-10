@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ATLETA.AddAtleta"
+    tools:context=".CAMPEONATO.AddCampeonato"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/info"
-            android:text="Insira um novo atleta"
+            android:text="Insira um novo campeonato"
             android:textColor="#FFFFFF"
             android:layout_below="@id/info1"
             android:layout_marginTop="75dp"
@@ -64,13 +64,13 @@
         android:layout_marginTop="60dp">
 
 
-        <!-- NAME -->
+        <!-- ESCALÃO -->
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/NameAtleta"
+            android:id="@+id/Campeonato"
 
-            android:hint="Nome do atleta"
+            android:hint="Nome do campeonato"
             android:textColorHint="#FFFFFF"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FFFFFF"
@@ -78,24 +78,13 @@
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"/>
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:layout_below="@+id/NameAtleta"
-            android:layout_marginTop="10dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dropdown"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"/>
-
         <!-- BOTÃO -->
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnAddAtleta"
-            android:onClick="btnAddAtleta"
-            android:layout_below="@+id/spinner"
+            android:id="@+id/btnAddCampeonato"
+            android:onClick="btnAddCampeonato"
+            android:layout_below="@+id/Escalao"
             android:hint=" Adicionar "
             android:textSize="18dp"
             android:fontFamily="monospace"

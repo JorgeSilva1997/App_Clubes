@@ -36,7 +36,7 @@ public class AddEscalao extends AppCompatActivity {
 
         //validating inputs
         if (TextUtils.isEmpty(nameEscalao)) {
-            NomeEscalao.setError("Por favor insira nome do campeonato!");
+            NomeEscalao.setError("Por favor insira nome do escalão!");
             NomeEscalao.requestFocus();
             return;
         }

@@ -148,7 +148,7 @@ public class Login extends AppCompatActivity {
 
                 }
                 else {
-                    Toast.makeText(Login.this, "User ou senaha inválida!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "User ou senha inválida!", Toast.LENGTH_SHORT).show();
                 }
             }
         });

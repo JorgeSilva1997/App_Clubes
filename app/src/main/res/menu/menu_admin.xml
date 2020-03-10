@@ -3,31 +3,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/addComp"
+        android:id="@+id/addEquipa"
         android:orderInCategory="1"
+        android:title="Adicionar equipa"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/addComp"
+        android:orderInCategory="10"
         android:title="Adicionar campeonato"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/addEscalao"
-        android:orderInCategory="10"
+        android:orderInCategory="100"
         android:title="Adicionar escalão"
         app:showAsAction="collapseActionView" />
     <item
         android:id="@+id/perfil"
-        android:orderInCategory="100"
+        android:orderInCategory="1000"
         android:title="Meu perfil"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/addAdmin"
-        android:orderInCategory="1000"
+        android:orderInCategory="10000"
         android:title="Adicionar colaborador"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/logout"
-        android:orderInCategory="10000"
+        android:orderInCategory="100000"
         android:title="Sair"
         app:showAsAction="collapseActionView" />
 
