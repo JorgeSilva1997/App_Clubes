@@ -4,66 +4,63 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Perfil"
-    android:background="@mipmap/fundo">
+    tools:context=".Perfil">
+
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/LayoutTitle"
-        android:layout_marginTop="75dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/title"
-            android:text="Seu perfil"
-            android:textColor="#FFFFFF"
-            android:textSize="42dp"
-            android:layout_centerHorizontal="true"/>
-
+        android:layout_width="125dp"
+        android:layout_height="match_parent"
+        android:id="@+id/a"
+        android:background="@mipmap/orange"
+        android:alpha=".80">
     </RelativeLayout>
 
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/secondLayout"
-        android:layout_below="@id/LayoutTitle"
-        android:layout_marginTop="75dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginRight="35dp">
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/a"
+        android:background="@mipmap/black"
+        android:alpha="1">
 
-        <!-- NOME -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:id="@+id/imgProfile"
+            android:src="@mipmap/person1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="25dp"/>
+
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/infoName"
-            android:text="Nome: "
-            android:textColor="#FFFFFF"
-            android:textSize="18dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name"
-            android:text=""
+            android:text="Jorge Silva"
+            android:layout_below="@id/imgProfile"
+            android:layout_marginTop="20dp"
             android:textColor="#FFFFFF"
-            android:textSize="18dp"
-            android:layout_toRightOf="@id/infoName" />
+            android:textSize="28dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"/>
 
-        <!-- EMAIL -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/name"
+            android:layout_marginTop="55dp"
+            android:id="@+id/line1"
+            android:alpha=".75"
+            android:layout_height="1dp"
+            android:background="@mipmap/orange"/>
 
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/infoMail"
-            android:text="Email: "
-            android:textColor="#FFFFFF"
-            android:textSize="18dp"
-            android:layout_below="@id/infoName"
-            android:layout_marginTop="12dp" />
+            android:id="@+id/mailIcon"
+            android:layout_below="@id/line1"
+            android:src="@drawable/mail"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -72,21 +69,31 @@
             android:text=""
             android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:layout_toRightOf="@id/infoMail"
-            android:layout_below="@id/name"
-            android:layout_marginTop="12dp" />
+            android:layout_below="@id/line1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="25dp"/>
 
-        <!-- NUMERO -->
+        <!-- Fisrt break -->
 
-        <TextView
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/mailIcon"
+            android:layout_marginTop="8dp"
+            android:id="@+id/line2"
+            android:alpha=".75"
+            android:layout_height="1dp"
+            android:background="@mipmap/orange"/>
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/infoNumber"
-            android:text="Número: "
-            android:textColor="#FFFFFF"
-            android:textSize="18dp"
-            android:layout_below="@id/infoMail"
-            android:layout_marginTop="12dp" />
+            android:id="@+id/phoneIcon"
+            android:layout_below="@id/line2"
+            android:src="@drawable/phone"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,33 +102,74 @@
             android:text=""
             android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:layout_toRightOf="@id/infoNumber"
-            android:layout_below="@id/mail"
-            android:layout_marginTop="12dp" />
+            android:layout_below="@id/line2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="25dp"/>
 
-        <!-- PASSWORD -->
 
-        <TextView
+        <!-- Second break -->
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/phoneIcon"
+            android:layout_marginTop="8dp"
+            android:id="@+id/line3"
+            android:alpha=".75"
+            android:layout_height="1dp"
+            android:background="@mipmap/orange"/>
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/infoPass"
-            android:text="Password: "
-            android:textColor="#FFFFFF"
-            android:textSize="18dp"
-            android:layout_below="@id/infoNumber"
-            android:layout_marginTop="12dp" />
+            android:id="@+id/passIcon"
+            android:layout_below="@id/line3"
+            android:src="@drawable/pass"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/pass"
             android:text=""
+            android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textSize="18dp"
-            android:layout_toRightOf="@id/infoPass"
-            android:layout_below="@id/numberId"
-            android:layout_marginTop="12dp"
-            android:inputType="textPassword"/>
+            android:layout_below="@id/line3"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="25dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/passIcon"
+            android:layout_marginTop="8dp"
+            android:id="@+id/line4"
+            android:alpha=".75"
+            android:layout_height="1dp"
+            android:background="@mipmap/orange"/>
+
+
+        <!-- Botão para editar perfil -->
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/btnEditProfile"
+            android:hint="Edit Profile"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColorHint="#FFFFFF"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="75dp"
+            android:background="@drawable/btn_border"/>
 
     </RelativeLayout>
 

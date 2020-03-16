@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/firstLayout"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="35dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="25dp"
         android:layout_marginLeft="25dp">
 
         <ImageView
@@ -42,7 +42,7 @@
             android:text="Nova convocatória"
             android:layout_below="@id/imgLogo"
             android:textColor="#FFFFFF"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="15dp"
             android:textSize="18dp"
             android:fontFamily="sans-serif-smallcaps"
             android:layout_centerHorizontal="true"
@@ -64,7 +64,7 @@
         <!-- SPINNER PARA ESCALÃO -->
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:id="@+id/spinnerEscalao"
             android:layout_marginTop="10dp"
             android:background="@android:drawable/btn_dropdown"
@@ -75,7 +75,7 @@
         <!-- SPINNER PARA Campeonato -->
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:id="@+id/spinnerCampeonato"
             android:layout_marginTop="12dp"
             android:layout_below="@id/spinnerEscalao"
@@ -154,7 +154,7 @@
             android:fontFamily="monospace"
             android:textColorHint="#FFFFFF"
             android:background="@drawable/btn_border"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="25dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"/>
 

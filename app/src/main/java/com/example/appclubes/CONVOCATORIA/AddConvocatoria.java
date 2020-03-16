@@ -63,36 +63,6 @@ public class AddConvocatoria extends AppCompatActivity {
     {
         Intent intent = new Intent(AddConvocatoria.this, ObterAtletas.class);
         startActivity(intent);
-        /*
-        lista = (ListView)findViewById(R.id.lista);
-        registerForContextMenu(lista);
-        setContentView(R.layout.custompopup);
-
-        reference.child("atleta").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                arrayAtletas.clear();
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren())
-                {
-                    // Fazer IF tendo em conta o escalão selecionado
-                    String NameAtleta = postSnapshot.child("nome").getValue().toString();
-                    arrayAtletas.add(NameAtleta);
-
-
-                    //ArrayAdapter dados = new ArrayAdapter(AddConvocatoria.this,  R.layout.support_simple_spinner_dropdown_item, arrayAtletas);
-                    //dados.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-                    //spinnerEscalao.setAdapter(dados);
-
-                }
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-        */
     }
     private void preenchespinnerEscalao()
     {

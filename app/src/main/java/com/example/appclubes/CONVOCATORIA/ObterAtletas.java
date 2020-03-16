@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,9 +23,8 @@ public class ObterAtletas extends AppCompatActivity {
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference reference;
-    
+
     ListView lista;
-    ArrayList<String> arrayAtletas = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +49,8 @@ public class ObterAtletas extends AppCompatActivity {
     {
         lista = (ListView)findViewById(R.id.lista);
         registerForContextMenu(lista);
-        setContentView(R.layout.custompopup);
+
+        final ArrayList<String> arrayAtletas = new ArrayList<String>();
 
         reference.child("atleta").addValueEventListener(new ValueEventListener() {
             @Override
