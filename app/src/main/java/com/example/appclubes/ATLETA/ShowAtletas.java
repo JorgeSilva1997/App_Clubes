@@ -63,8 +63,8 @@ public class ShowAtletas extends AppCompatActivity {
                     //dados.setDropDownViewResource(R.layout.lista_row2);
                     //listaAtletas.setAdapter(dados);
 
-                    MyArrayAdapterAtletas itemsAdapter = new MyArrayAdapterAtletas(ShowAtletas.this, ListAtletas);
-                    ((ListView) findViewById(R.id.listAllAtletas)).setAdapter(itemsAdapter);
+                    //MyArrayAdapterAtletas itemsAdapter = new MyArrayAdapterAtletas(ShowAtletas.this, ListAtletas);
+                    //((ListView) findViewById(R.id.listAllAtletas)).setAdapter(itemsAdapter);
 
                 }
 
