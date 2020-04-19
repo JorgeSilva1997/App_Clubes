@@ -123,6 +123,7 @@
 
         <Button
             android:id="@+id/btn7"
+            android:onClick="btnShowAtletas"
             android:layout_width="140dp"
             android:layout_height="100dp"
             android:layout_alignEnd="@+id/btn4"

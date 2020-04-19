@@ -40,6 +40,7 @@ public class AddAtleta extends AppCompatActivity {
     private Spinner spinner;
     private Escalao escalao;
     private String xpto1;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +72,8 @@ public class AddAtleta extends AppCompatActivity {
                     escaloes.add(NameEscalao);
 
 
-                    ArrayAdapter dados = new ArrayAdapter(AddAtleta.this,  R.layout.support_simple_spinner_dropdown_item, escaloes);
-                    dados.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                    ArrayAdapter dados = new ArrayAdapter(AddAtleta.this, android.R.layout.simple_spinner_dropdown_item, escaloes);
+                    dados.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spinner.setAdapter(dados);
 
                 }
@@ -104,6 +105,8 @@ public class AddAtleta extends AppCompatActivity {
 
             atleta.setNome(NomeAtleta.getText().toString());
             atleta.setEscalao(xpto1);
+            String idString = String.valueOf(id);
+            atleta.setId(idString);
             //Toast.makeText(AddAtleta.this, xpto1, Toast.LENGTH_SHORT).show();
 
             addAtleta();
@@ -150,5 +153,11 @@ public class AddAtleta extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void GetIds()
+    {
+        id = 0;
+        id = id +1;
     }
 }

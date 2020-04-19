@@ -30,6 +30,7 @@
         <activity android:name=".EQUIPA.AddEquipa" />
         <activity android:name=".CONVOCATORIA.AddConvocatoria" />
         <activity android:name=".CONVOCATORIA.ObterAtletas" />
+        <activity android:name=".ATLETA.ShowAtletas"/>
     </application>
 
 </manifest>

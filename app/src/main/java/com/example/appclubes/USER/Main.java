@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.appclubes.ATLETA.ShowAtletas;
 import com.example.appclubes.Info;
 import com.example.appclubes.Login;
 import com.example.appclubes.Perfil;
@@ -105,6 +106,11 @@ public class Main extends AppCompatActivity {
     public void btnPerfil(View view)
     {
         Intent intent = new Intent(Main.this, Perfil.class);
+        startActivity(intent);
+    }
+    public void btnShowAtletas(View view)
+    {
+        Intent intent = new Intent(Main.this, ShowAtletas.class);
         startActivity(intent);
     }
 }
