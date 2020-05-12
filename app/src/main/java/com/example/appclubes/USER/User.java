@@ -9,18 +9,20 @@ public class User {
     private String password;
     private String email;
     private int tipo;
+    private String KeyUser;
 
     public User() {
 
     }
 
-    public User(String numberId, String name, String password, String email, int tipo){
+    public User(String numberId, String name, String password, String email, int tipo, String KeyUser){
 
         this.numberId = numberId;
         this.name = name;
         this.password = password;
         this.email = email;
         this.tipo = tipo;
+        this.KeyUser = KeyUser;
     }
 
 
@@ -55,8 +57,10 @@ public class User {
     public int getTipo() {
         return tipo;
     }
-
     public void setTipo(int tipo){
         this.tipo = tipo;
     }
+
+    public String getKeyUser() {return KeyUser;}
+    public void setKeyUser(String KeyUser) {this.KeyUser = KeyUser;}
 }

@@ -132,7 +132,9 @@ public class Regist_Admin extends AppCompatActivity {
 
             reference = ConfiguraçãoFirebase.getReference().child("users");
             // O push é equivalente à Primary_Key
-            reference.push().setValue(user);
+            String key = reference.push().getKey();
+            user.setKeyUser(key);
+            reference.child(key).setValue(user);
             Toast.makeText(Regist_Admin.this, "Registado com sucesso!", Toast.LENGTH_LONG).show();
             return true;
 

@@ -19,6 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_toRightOf="@id/a"
+        android:id="@+id/b"
         android:background="@mipmap/black"
         android:alpha="1">
 
@@ -156,20 +157,42 @@
         <!-- Botão para editar perfil -->
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
             android:id="@+id/btnEditProfile"
-            android:hint="Edit Profile"
-            android:textSize="20dp"
+            android:onClick="btnEditProfile"
+            android:hint="    Edit Profile   "
+            android:textSize="16dp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textColorHint="#FFFFFF"
-            android:layout_centerHorizontal="true"
+            android:textColorHint="#1E90FF"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="75dp"
-            android:background="@drawable/btn_border"/>
+            android:background="@drawable/btn_border"
+
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="6dp"
+            android:layout_marginBottom="15dp"/>
+
+        <!-- Botão para remover perfil -->
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRemoveProfile"
+            android:onClick="btnRemoveProfile"
+            android:layout_toRightOf="@id/btnEditProfile"
+            android:hint="Remove Profile"
+            android:textSize="16dp"
+            android:fontFamily="sans-serif"
+            android:textStyle="bold"
+            android:textColorHint="#FF0000"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_border"
+
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="15dp"/>
 
     </RelativeLayout>
 

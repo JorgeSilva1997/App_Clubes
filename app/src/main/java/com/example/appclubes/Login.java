@@ -1,13 +1,17 @@
 package com.example.appclubes;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appclubes.ADMIN.Main_admin;
@@ -37,19 +41,28 @@ public class Login extends AppCompatActivity {
     private String tipoUser;
     private int tipoUserInt;
 
+    private TextView textForgotPass;
+    private AlertDialog alerta;
+
 
    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+       textForgotPass = (TextView)findViewById(R.id.textForgotPass);
+
+       final EditText editTextEmail = new EditText(Login.this);
+       editTextEmail.setHint("exemplo@exemplo.com");
+
         myRef = FirebaseDatabase.getInstance().getReference();
 
         if (UserLog())
         {
 
-                Intent intent = new Intent(Login.this, Main.class);
-                startActivity(intent);
+               // String email = auth.getCurrentUser().getEmail().toString();
+               // OpenMain(email);
+               // finish();
 
         }
         else
@@ -57,6 +70,68 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(Login.this, "Faça login!", Toast.LENGTH_SHORT).show();
             }
 
+        // Criar Alerta para recuperar password
+       textForgotPass.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+
+               AlertDialog.Builder builder = new AlertDialog.Builder(Login.this);
+               builder.setCancelable(false);
+
+               builder.setTitle("Recuperação de Password");
+               builder.setMessage("Por favor insira o seu e-mail!");
+               builder.setView(editTextEmail);
+
+               if (!editTextEmail.getText().equals(""))
+               {
+                   builder.setPositiveButton("Recuperar", new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                           auth = FirebaseAuth.getInstance();
+
+                           String emailRecuperar = editTextEmail.getText().toString();
+
+                           auth.sendPasswordResetEmail(emailRecuperar).addOnCompleteListener(new OnCompleteListener<Void>() {
+                               @Override
+                               public void onComplete(@NonNull Task<Void> task) {
+
+                                   if (task.isSuccessful()){
+                                       Toast.makeText(Login.this, "Verifique o seu e-mail!", Toast.LENGTH_SHORT).show();
+
+                                       Intent intent = getIntent();
+                                       finish();
+                                       startActivity(intent);
+                                   }
+                                   else{
+                                       Toast.makeText(Login.this, "Erro ao enviar e-mail!", Toast.LENGTH_SHORT).show();
+
+                                       Intent intent = getIntent();
+                                       finish();
+                                       startActivity(intent);
+                                   }
+                               }
+                           });
+                       }
+                   });
+
+                   builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                           Intent intent = getIntent();
+                           finish();
+                           startActivity(intent);
+                       }
+                   });
+               }
+               else
+                   {
+                       Toast.makeText(Login.this, "Insira um e-mail!", Toast.LENGTH_SHORT).show();
+                   }
+
+               alerta = builder.create();
+               alerta.show();
+           }
+       });
     }
 
     public void btnRegist(View view){
@@ -166,6 +241,43 @@ public class Login extends AppCompatActivity {
             {
                 return false;
             }
+    }
+
+    private void OpenMain(String emailUser)
+    {
+        String email = auth.getCurrentUser().getEmail().toString();
+
+        myRef.child("users").child("email").equalTo(email.toString()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot snapshot : dataSnapshot.getChildren())
+                {
+                    String tipoUser = snapshot.child("tipo").getValue().toString();
+                    int tipoUserInt1 = Integer.parseInt(tipoUser);
+
+                    if (tipoUserInt1 == 1){
+                        Intent intent = new Intent(Login.this, Main_admin.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                    else if (tipoUserInt1 == 0) {
+                        Intent intent = new Intent(Login.this, Main.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        Intent intent = new Intent(Login.this, Main.class);
+        startActivity(intent);
+        finish();
     }
 
 }

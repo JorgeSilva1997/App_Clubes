@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Edit_Profile"
+    android:background="@mipmap/edit">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="75dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="25dp">
+
+    <!-- NAME -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_toRightOf="@id/imgName"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+
+            android:id="@+id/InfoName"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_user"
+            android:layout_below="@id/InfoName"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/imgName"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoName"
+            android:layout_toRightOf="@id/imgName"
+            android:textSize="16dp"
+            android:layout_marginLeft="6dp"
+
+            android:id="@+id/Name"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Name"
+            android:layout_toRightOf="@id/imgName"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line1"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+    <!-- EMAIL -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_toRightOf="@id/imgEmail"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+            android:layout_below="@id/line1"
+            android:layout_marginTop="22dp"
+
+            android:id="@+id/InfoEmail"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_mail"
+            android:layout_below="@id/InfoEmail"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/imgEmail"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoEmail"
+            android:layout_toRightOf="@id/imgEmail"
+            android:textSize="16dp"
+            android:layout_marginLeft="6dp"
+            android:inputType="textEmailAddress"
+
+            android:id="@+id/Email"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Email"
+            android:layout_toRightOf="@id/imgEmail"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line2"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+    <!-- NUMBER -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Number"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_toRightOf="@id/imgNumber"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+            android:layout_below="@id/line2"
+            android:layout_marginTop="22dp"
+
+            android:id="@+id/InfoNumber"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_phone"
+            android:layout_below="@id/InfoNumber"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/imgNumber"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoNumber"
+            android:layout_toRightOf="@id/imgNumber"
+            android:textSize="16dp"
+            android:layout_marginLeft="6dp"
+            android:maxLength="9"
+            android:inputType="number"
+
+            android:id="@+id/Number"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Number"
+            android:layout_toRightOf="@id/imgNumber"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line3"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+    <!-- PASSWORD -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_toRightOf="@id/imgPass"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+            android:layout_below="@id/line3"
+            android:layout_marginTop="22dp"
+
+            android:id="@+id/InfoPass"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pass"
+            android:layout_below="@id/InfoPass"
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/imgPass"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoPass"
+            android:layout_marginTop="9dp"
+            android:layout_toRightOf="@id/imgPass"
+            android:textSize="16dp"
+            android:layout_marginLeft="6dp"
+
+            android:id="@+id/Pass"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Pass"
+            android:layout_toRightOf="@id/imgPass"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line4"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+        <!-- BOTÃO -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnedit"
+            android:onClick="btnedit"
+            android:hint=" Edit "
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:textColorHint="#FFFFFF"
+            android:background="@drawable/btn_border"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+
+            android:layout_alignParentBottom="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/line4"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="6dp"
+            android:id="@+id/textChangePass"
+            android:hint="Change password? Click here"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp" />
+
+</RelativeLayout>
+
+</RelativeLayout>

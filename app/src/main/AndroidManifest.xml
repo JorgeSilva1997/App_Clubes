@@ -31,6 +31,7 @@
         <activity android:name=".CONVOCATORIA.AddConvocatoria" />
         <activity android:name=".CONVOCATORIA.ObterAtletas" />
         <activity android:name=".ATLETA.ShowAtletas"/>
+        <activity android:name=".Edit_Profile" />
     </application>
 
 </manifest>
