@@ -1,52 +1,56 @@
-package com.example.appclubes.ADMIN;
+package com.example.appclubes.ATLETA;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appclubes.ATLETA.AddAtleta;
-import com.example.appclubes.ATLETA.ChooseOptionAtleta;
-import com.example.appclubes.CAMPEONATO.AddCampeonato;
+import com.example.appclubes.ADMIN.Main_admin;
+import com.example.appclubes.ADMIN.Regist_Admin;
 import com.example.appclubes.CAMPEONATO.ChooseOptionCamp;
-import com.example.appclubes.CONVOCATORIA.AddConvocatoria;
 import com.example.appclubes.EQUIPA.AddEquipa;
 import com.example.appclubes.ESCALAO.AddEscalao;
 import com.example.appclubes.Info;
-import com.example.appclubes.Login;
 import com.example.appclubes.Perfil;
 import com.example.appclubes.R;
-import com.example.appclubes.USER.Main;
-import com.example.appclubes.USER.User;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class Main_admin extends AppCompatActivity {
+public class ListAtleta extends AppCompatActivity {
 
+    ListView lista;
+    FirebaseListAdapter adapter;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-    private User user;
     private String TipoUserEmail;
     private TextView tipoUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_admin);
+        setContentView(R.layout.listatleta);
 
+        lista = (ListView)findViewById(R.id.listAtletas);
         auth = FirebaseAuth.getInstance();
-        tipoUser = (TextView)findViewById(R.id.txtTipoAdmin);
         reference = FirebaseDatabase.getInstance().getReference();
+
+        Default();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -60,7 +64,7 @@ public class Main_admin extends AppCompatActivity {
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren())
                 {
                     TipoUserEmail = postSnapshot.child("name").getValue().toString();
-                    tipoUser.setText(TipoUserEmail);
+                    //tipoUser.setText(TipoUserEmail);
 
                 }
 
@@ -75,7 +79,7 @@ public class Main_admin extends AppCompatActivity {
 
         ////////////////////////////////////////////////////
 
-        getMenuInflater().inflate(R.menu.menu_admin, menu);
+        getMenuInflater().inflate(R.menu.menu_atleta, menu);
         return true;
     }
 
@@ -84,62 +88,57 @@ public class Main_admin extends AppCompatActivity {
 
         int id = item.getItemId();
 
-        if (id == R.id.logout)
+        if (id == R.id.OrderName)
         {
-            Logout();
+
         }
-        else if (id == R.id.addEscalao)
+        else if (id == R.id.OrderEscalao)
         {
-            Intent intent = new Intent(Main_admin.this, AddEscalao.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.perfil)
-        {
-            Intent intent = new Intent(Main_admin.this, Perfil.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.addAdmin)
-        {
-            Intent intent = new Intent(Main_admin.this, Regist_Admin.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.infoProg)
-        {
-            Intent intent = new Intent(Main_admin.this, Info.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.addComp)
-        {
-            Intent intent = new Intent(Main_admin.this, ChooseOptionCamp.class);
-            startActivity(intent);
-        }
-        else if (id == R.id.addEquipa)
-        {
-            Intent intent = new Intent(Main_admin.this, AddEquipa.class);
-            startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void Logout()
-    {
-        auth.signOut();
 
-        Intent intent = new Intent(Main_admin.this, Login.class);
-        startActivity(intent);
-        finish();
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+        adapter.startListening();
+    }
+    @Override
+    protected void onStop()
+    {
+        super.onStop();
+        adapter.stopListening();
     }
 
-    public void btnAtleta(View view)
+    public void OrderNome()
     {
-        Intent intent = new Intent(Main_admin.this, ChooseOptionAtleta.class);
-        startActivity(intent);
     }
 
-    public void btnConvocatoria(View view)
+    public void Default()
     {
-        Intent intent = new Intent(Main_admin.this, AddConvocatoria.class);
-        startActivity(intent);
+        Query query = FirebaseDatabase.getInstance().getReference().child("atleta");
+        FirebaseListOptions<Atleta> options = new FirebaseListOptions.Builder<Atleta>()
+                .setLayout(R.layout.linha_atleta)
+                .setQuery(query,Atleta.class)
+                .build();
+
+        adapter = new FirebaseListAdapter(options) {
+            @Override
+            protected void populateView(View v, Object model, int position) {
+                TextView NomedoAtleta = v.findViewById(R.id.NomedoAtleta);
+                TextView EscalaodoAtleta = v.findViewById(R.id.EscalaodoAtleta);
+
+                Atleta atleta = (Atleta) model;
+
+                NomedoAtleta.setText(atleta.getNome());
+                EscalaodoAtleta.setText(atleta.getEscalao());
+            }
+        };
+
+        lista.setAdapter(adapter);
     }
 }

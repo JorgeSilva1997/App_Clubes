@@ -91,8 +91,6 @@ public class AddAtleta extends AppCompatActivity {
     public void btnAddAtleta(View view)
     {
         String nameAtleta = NomeAtleta.getText().toString();
-        // Falta obter o escalao pelo o SPINNER
-        //String nameEscalao = xpto;
 
         //validating inputs
         if (TextUtils.isEmpty(nameAtleta)) {
@@ -105,9 +103,6 @@ public class AddAtleta extends AppCompatActivity {
 
             atleta.setNome(NomeAtleta.getText().toString());
             atleta.setEscalao(xpto1);
-            String idString = String.valueOf(id);
-            atleta.setId(idString);
-            //Toast.makeText(AddAtleta.this, xpto1, Toast.LENGTH_SHORT).show();
 
             addAtleta();
         }
@@ -124,7 +119,9 @@ public class AddAtleta extends AppCompatActivity {
         try {
 
             reference = ConfiguraçãoFirebase.getReference().child("atleta");
-            reference.push().setValue(atleta);
+            String key = reference.push().getKey();
+            atleta.setKeyAtleta(key);
+            reference.child(key).setValue(atleta);
             Toast.makeText(AddAtleta.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
             return true;
         }   catch (Exception e){
@@ -136,8 +133,6 @@ public class AddAtleta extends AppCompatActivity {
 
     private void preenchespinner()
     {
-        //items();
-
         ObterEscaloes();
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -153,11 +148,5 @@ public class AddAtleta extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void GetIds()
-    {
-        id = 0;
-        id = id +1;
     }
 }

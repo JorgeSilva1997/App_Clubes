@@ -32,6 +32,10 @@
         <activity android:name=".CONVOCATORIA.ObterAtletas" />
         <activity android:name=".ATLETA.ShowAtletas"/>
         <activity android:name=".Edit_Profile" />
+        <activity android:name=".ATLETA.ChooseOptionAtleta" />
+        <activity android:name=".ATLETA.ListAtleta" />
+        <activity android:name=".CAMPEONATO.ChooseOptionCamp"/>
+        <activity android:name=".CAMPEONATO.ListCamp" />
     </application>
 
 </manifest>

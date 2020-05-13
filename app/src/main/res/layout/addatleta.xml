@@ -76,7 +76,8 @@
             android:backgroundTint="#FFFFFF"
             android:inputType="text"
             android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"/>
+            android:layout_marginLeft="15dp"
+            android:maxLength="25"/>
 
         <Spinner
             android:layout_width="match_parent"

@@ -47,7 +47,7 @@ public class MyArrayAdapterAtletas extends ArrayAdapter<Atleta> {
         Atleta atletaItem = getItem(position);
 
         if (atletaItem != null){
-            id.setText(atletaItem.getId());
+            id.setText(atletaItem.getKeyAtleta());
             NomeAtleta.setText(atletaItem.getNome());
             EscalaoAtleta.setText(atletaItem.getEscalao());
         }

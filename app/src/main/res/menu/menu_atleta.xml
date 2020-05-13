@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/OrderName"
+        android:orderInCategory="1"
+        android:title="Ordenar por nome"
+        app:showAsAction="collapseActionView" />
+
+    <item
+        android:id="@+id/OrderEscalao"
+        android:orderInCategory="10"
+        android:title="Ordenar por escalão"
+        app:showAsAction="collapseActionView" />
+
+</menu>

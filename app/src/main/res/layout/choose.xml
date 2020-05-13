@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ATLETA.ChooseOptionAtleta"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="25dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgLogo"
+            android:layout_marginLeft="35dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome"
+            android:text="Escolha uma das opções"
+            android:layout_below="@id/imgLogo"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTipoAdmin"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:layout_below="@id/welcome"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps" />
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+
+    <!-- BOTÕES -->
+
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAlignment="center">
+
+        <Button
+            android:id="@+id/addatleta"
+            android:onClick="btnaddatleta"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:text="Adicionar Atleta" />
+
+        <Button
+            android:id="@+id/listatleta"
+            android:onClick="btnlistatleta"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/addatleta"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:text="Listar Atletas" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

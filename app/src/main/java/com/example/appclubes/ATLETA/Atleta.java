@@ -2,7 +2,7 @@ package com.example.appclubes.ATLETA;
 
 public class Atleta {
 
-    public  String id;
+    public  String keyAtleta;
     public  String nome;
     public  String escalao;
 
@@ -10,15 +10,15 @@ public class Atleta {
 
     }
 
-    public Atleta(String id, String nome, String escalao){
+    public Atleta(String keyAtleta, String nome, String escalao){
 
-        this.id = id;
+        this.keyAtleta = keyAtleta;
         this.nome = nome;
         this.escalao = escalao;
     }
 
-    public String getId() {return id;}
-    public void setId(String id) {this.id=id;}
+    public String getKeyAtleta() {return keyAtleta;}
+    public void setKeyAtleta(String keyAtleta) {this.keyAtleta=keyAtleta;}
 
     public String getNome() {return nome;}
     public void setNome(String nome) {this.nome=nome;}

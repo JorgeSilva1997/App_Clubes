@@ -57,7 +57,9 @@ public class AddCampeonato extends AppCompatActivity {
         try {
 
             reference = ConfiguraçãoFirebase.getReference().child("campeonato");
-            reference.push().setValue(campeonato);
+            String key = reference.push().getKey();
+            campeonato.setKeyCamp(key);
+            reference.child(key).setValue(campeonato);
             Toast.makeText(AddCampeonato.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
             return true;
         }   catch (Exception e) {

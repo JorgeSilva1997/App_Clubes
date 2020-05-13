@@ -5,30 +5,30 @@
     <item
         android:id="@+id/addEquipa"
         android:orderInCategory="1"
-        android:title="Adicionar equipa"
+        android:title="Equipa"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/addComp"
         android:orderInCategory="10"
-        android:title="Adicionar campeonato"
+        android:title="Campeonato"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/addEscalao"
         android:orderInCategory="100"
-        android:title="Adicionar escalão"
+        android:title="Escalão"
         app:showAsAction="collapseActionView" />
     <item
         android:id="@+id/perfil"
-        android:orderInCategory="1000"
+        android:orderInCategory="10000"
         android:title="Meu perfil"
         app:showAsAction="collapseActionView" />
 
     <item
         android:id="@+id/addAdmin"
-        android:orderInCategory="10000"
-        android:title="Adicionar colaborador"
+        android:orderInCategory="1000"
+        android:title="Colaborador"
         app:showAsAction="collapseActionView" />
 
     <item
