@@ -85,4 +85,14 @@
         android:dividerHeight="2dp"/>
 
 </RelativeLayout>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="6dp"
+        android:spinnerMode="dropdown"
+        android:background="@android:drawable/btn_dropdown"/>
 </RelativeLayout>

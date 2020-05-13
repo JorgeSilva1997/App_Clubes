@@ -59,7 +59,9 @@ public class AddEscalao extends AppCompatActivity {
         try {
 
             reference = ConfiguraçãoFirebase.getReference().child("escalao");
-            reference.push().setValue(escalao);
+            String key = reference.push().getKey();
+            escalao.setKeyEscalao(key);
+            reference.child(key).setValue(escalao);
             Toast.makeText(AddEscalao.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
             return true;
         }   catch (Exception e){
