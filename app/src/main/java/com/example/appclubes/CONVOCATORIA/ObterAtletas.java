@@ -1,45 +1,64 @@
 package com.example.appclubes.CONVOCATORIA;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.appclubes.ATLETA.Atleta;
-import com.example.appclubes.CustomAdapter;
-import com.example.appclubes.ListViewItemDTO;
 import com.example.appclubes.R;
+import com.firebase.ui.database.FirebaseListAdapter;
+import com.firebase.ui.database.FirebaseListOptions;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.Query;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ObterAtletas extends AppCompatActivity {
 
     private FirebaseAuth auth;
     private FirebaseDatabase database;
-    private DatabaseReference reference;
+    private DatabaseReference myRef;
+    FirebaseListAdapter adapter;
+    Map<String, Object> mapAtletas = new HashMap<>();
+    ListView lista;
+    CheckBox checkBoxAtleta;
+    Button btn;
+
+    private String origem = "";
+    private String escalao = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custompopup);
 
-        reference = FirebaseDatabase.getInstance().getReference();
+        myRef = FirebaseDatabase.getInstance().getReference();
         auth = FirebaseAuth.getInstance();
+
+        lista = (ListView) findViewById(R.id.listAtletas);
+        registerForContextMenu(lista);
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        origem = bundle.getString("origem");
+
+        if (origem.equals("AddAtleta")) {
+            escalao = bundle.getString("escalao");
+            Toast.makeText(ObterAtletas.this, "" + escalao, Toast.LENGTH_SHORT).show();
+            Atletas(escalao);
+        }
 
         // Criar POP UP Window
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -50,88 +69,94 @@ public class ObterAtletas extends AppCompatActivity {
 
         getWindow().setLayout((int) (width * .8), (int) (height * .6));
 
-        // Get listview checkbox.
-        //final ListView listViewWithCheckbox = (ListView)findViewById(R.id.list_view_with_checkbox);
-        final ListView listView = (ListView) findViewById(R.id.lista);
 
-        // Initiate listview data.
-        final List<ListViewItemDTO> initItemList = this.getInitViewItemDtoList();
+        // Teste
+        //addListenerOnButtonClick();
+    }
 
-        // Create a custom list view adapter with checkbox control.
-        final CustomAdapter listViewDataAdapter = new CustomAdapter(getApplicationContext(), initItemList);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
 
-        listViewDataAdapter.notifyDataSetChanged();
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
 
-        // Set data adapter to list view.
-        listView.setAdapter(listViewDataAdapter);
+    public void Atletas(String escalao) {
+        Query query = FirebaseDatabase.getInstance().getReference().child("atleta").orderByChild("escalao").equalTo(escalao);
+        FirebaseListOptions<Atleta> options = new FirebaseListOptions.Builder<Atleta>()
+                .setLayout(R.layout.linha_obter_atleta)
+                .setQuery(query, Atleta.class)
+                .build();
 
-        // When list view item is clicked.
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        adapter = new FirebaseListAdapter(options) {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int itemIndex, long l) {
-                // Get user selected item.
-                Object itemObject = adapterView.getAdapter().getItem(itemIndex);
+            protected void populateView(View v, Object model, int position) {
+                TextView NomedoAtleta = v.findViewById(R.id.NomeAtleta);
 
-                // Translate the selected item to DTO object.
-                ListViewItemDTO itemDto = (ListViewItemDTO) itemObject;
+                Atleta atleta = (Atleta) model;
+                NomedoAtleta.setText(atleta.getNome());
 
-                // Get the checkbox.
-                CheckBox itemCheckbox = (CheckBox) findViewById(R.id.checkbox);
-
-                // Reverse the checkbox and clicked item check state.
-                if (itemDto.isChecked()) {
-                    itemCheckbox.setChecked(false);
-                    itemDto.setChecked(false);
-                } else {
-                    itemCheckbox.setChecked(true);
-                    itemDto.setChecked(true);
-                }
-
-                //Toast.makeText(getApplicationContext(), "select item text : " + itemDto.getItemText(), Toast.LENGTH_SHORT).show();
+                //Writing Hashmap
+                mapAtletas.put("nome", NomedoAtleta);
             }
-        });
+        };
+        lista.setAdapter(adapter);
     }
-        // Return an initialize list of ListViewItemDTO.
-        private List<ListViewItemDTO> getInitViewItemDtoList()
-        {
+    /*
+        public void addListenerOnButtonClick(){
+            //Getting instance of CheckBoxes and Button from the activty_main.xml file
+            checkBoxAtleta=(CheckBox)findViewById(R.id.checkBoxAtleta);
+            Button btn = (Button) findViewById(R.id.AddAtleta);
 
-            reference.child("atleta").addValueEventListener(new ValueEventListener() {
+            //Applying the Listener on the Button click
+            btn.setOnClickListener(new View.OnClickListener(){
+
                 @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    for (DataSnapshot postSnapshot : dataSnapshot.getChildren())
-                    {
-                        // Fazer IF tendo em conta o escalão selecionado
-
-                        String NameAtleta[] = {postSnapshot.child("nome").getValue().toString()};
-
+                public void onClick(View view) {
+                    int totalamount=0;
+                    StringBuilder result=new StringBuilder();
+                    result.append("Selected Items:");
+                    if(checkBoxAtleta.isChecked()){
+                        result.append("\nPizza 100Rs");
+                        totalamount+=100;
                     }
-
+                    result.append("\nTotal: "+totalamount+"Rs");
+                    //Displaying the message on the toast
+                    Toast.makeText(getApplicationContext(), resu.toString(), Toast.LENGTH_LONG).show();
                 }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                }
             });
-
-            String itemTextArr[] = {"Android", "iOS", "Java", "JavaScript", "JDBC", "JSP", "Linux", "Python", "Servlet", "Windows"};
-            //String itemTextArr[] = NameAtleta;
-
-            List<ListViewItemDTO> ret = new ArrayList<ListViewItemDTO>();
-            int length = itemTextArr.length;
-
-            for(int i=0;i<length;i++)
-            {
-                String itemText = itemTextArr[i];
-
-                ListViewItemDTO dto = new ListViewItemDTO();
-                dto.setChecked(false);
-                dto.setItemText(itemText);
-
-                ret.add(dto);
-            }
-
-            return ret;
         }
+
+        /*
+            public void onCheckboxClicked(View view) {
+
+                boolean checked = ((CheckBox) view).isChecked();
+
+                if (checked) {
+                    Toast.makeText(ObterAtletas.this, "Atleta selecionado" , Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(ObterAtletas.this, "", Toast.LENGTH_SHORT).show();
+                }
+            }
+    */
+    public void onCheckboxClicked(View view) {
+        boolean checked = ((CheckBox) view).isChecked();
+        String str = "";
+        // Check which checkbox was clicked
+        switch (view.getId()) {
+            case R.id.checkBoxAtleta:
+                str = checked ? "Atleta selecionado" : "Atleta não selecionado";
+                break;
+        }
+        Toast.makeText(getApplicationContext(), str, Toast.LENGTH_SHORT).show();
     }
+
+}
 
 

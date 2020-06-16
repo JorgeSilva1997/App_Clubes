@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Regist_Admin extends AppCompatActivity {
 
-    EditText name, password, email, numberId;
+    EditText name, password, email, numberId, cargo;
     private FirebaseAuth auth;
     private FirebaseDatabase database;
     private DatabaseReference reference;
@@ -42,6 +42,7 @@ public class Regist_Admin extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
         email = (EditText)findViewById(R.id.email);
         numberId = (EditText)findViewById(R.id.numberId);
+        cargo = (EditText)findViewById(R.id.cargo);
     }
 
     public void btnregist(View view) {
@@ -50,6 +51,7 @@ public class Regist_Admin extends AppCompatActivity {
         String pass = password.getText().toString();
         String mail = email.getText().toString();
         String number = numberId.getText().toString();
+        String Cargo = cargo.getText().toString();
 
         //validating inputs
         if (TextUtils.isEmpty(nome)) {
@@ -73,6 +75,11 @@ public class Regist_Admin extends AppCompatActivity {
             numberId.requestFocus();
             return;
         }
+        if (TextUtils.isEmpty(Cargo)) {
+            cargo.setError("Por favor insira um cargo");
+            cargo.requestFocus();
+            return;
+        }
         else {
 
             user = new User();
@@ -82,6 +89,7 @@ public class Regist_Admin extends AppCompatActivity {
             user.setEmail(email.getText().toString());
             user.setNumberId(numberId.getText().toString());
             user.setTipo(1);
+            user.setCargo(cargo.getText().toString());
 
             registar();
         }

@@ -6,17 +6,19 @@ public class Users {
     public String name;
     public String email;
     public int tipo;
+    public String cargo;
 
     public Users() {
 
     }
 
-    public Users(String keyUser, String name, String email, int tipo) {
+    public Users(String keyUser, String name, String email, int tipo, String cargo) {
 
         this.keyUser = keyUser;
         this.name = name;
         this.email = email;
         this.tipo = tipo;
+        this.cargo = cargo;
     }
 
     public String getKeyUser() {return keyUser;}
@@ -37,4 +39,9 @@ public class Users {
     public int getTipo() {return tipo;}
 
     public void setTipo(int tipo) {this.tipo = tipo;}
+
+
+    public String getCargo() {return cargo;}
+
+    public void setCargo(String cargo) {this.cargo = cargo;}
 }

@@ -43,6 +43,7 @@
         <activity android:name=".ATLETA.Edit_Atleta" />
         <activity android:name=".ADMIN.ChooseOptionAdmin" />
         <activity android:name=".ADMIN.ListAllUser" />
+        <activity android:name=".ShowDirecao"/>
     </application>
 
 </manifest>

@@ -38,7 +38,6 @@ public class ListAllUser extends AppCompatActivity {
     ListView lista;
     FirebaseListAdapter adapter;
     TextView NomedoUser;
-    int help;
 
 
     @Override
@@ -61,23 +60,14 @@ public class ListAllUser extends AppCompatActivity {
             protected void populateView(View v, Object model, int position) {
                 TextView NomedoUser = v.findViewById(R.id.NomedoUser);
                 TextView EmaildoUser = v.findViewById(R.id.EmaildoUser);
-                TextView TipodoUser = v.findViewById(R.id.TipodoUser);
+                //TextView TipodoUser = v.findViewById(R.id.TipodoUser);
+                TextView Cargo = v.findViewById(R.id.TipodoUser);
 
                 Users users = (Users) model;
 
-                help = users.getTipo();
-
                 NomedoUser.setText(users.getName());
                 EmaildoUser.setText(users.getEmail());
-
-                if (help == 1){
-                    TipodoUser.setText("Administrador");
-                }
-                else if (help == 0){
-                    TipodoUser.setText("Normal");
-                }
-
-                //TipodoUser.setText(users.getTipo());
+                Cargo.setText(users.getCargo());
             }
         };
 

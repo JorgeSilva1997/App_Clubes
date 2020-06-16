@@ -15,6 +15,7 @@ import com.example.appclubes.Info;
 import com.example.appclubes.Login;
 import com.example.appclubes.Perfil;
 import com.example.appclubes.R;
+import com.example.appclubes.ShowDirecao;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -111,6 +112,11 @@ public class Main extends AppCompatActivity {
     public void btnShowAtletas(View view)
     {
         Intent intent = new Intent(Main.this, ShowAtletas.class);
+        startActivity(intent);
+    }
+    public void btnDirecao(View view)
+    {
+        Intent intent = new Intent(Main.this, ShowDirecao.class);
         startActivity(intent);
     }
 }

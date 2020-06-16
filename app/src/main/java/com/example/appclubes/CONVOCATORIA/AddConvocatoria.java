@@ -62,6 +62,12 @@ public class AddConvocatoria extends AppCompatActivity {
     public void btnAtletas(View view)
     {
         Intent intent = new Intent(AddConvocatoria.this, ObterAtletas.class);
+        Bundle bundle = new Bundle();
+
+        bundle.putString("origem", "AddAtleta");
+        bundle.putString("escalao", xpto1);
+
+        intent.putExtras(bundle);
         startActivity(intent);
     }
     private void preenchespinnerEscalao()

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="12dp"
+    android:layout_marginRight="12dp"
+    android:layout_marginTop="3dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/R1"
+        android:layout_toRightOf="@id/R2">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NomedoUser"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/EmaildoUser"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/NumerodoUser"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/CargodoUser"
+                android:text=""
+                android:textColor="#FFFFFF"
+                android:textSize="18dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/R2"
+        android:layout_marginLeft="6dp">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoEquipa"
+                android:text="Nome:"
+                android:textColor="#DC6416"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoEmail"
+                android:text="Email:"
+                android:textColor="#DC6416"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoNumero"
+                android:text="Número:"
+                android:textColor="#DC6416"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/infoCargo"
+                android:text="Cargo:"
+                android:textColor="#DC6416"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif-smallcaps"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

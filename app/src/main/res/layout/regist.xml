@@ -29,6 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imgLogo"
+            android:id="@+id/info1"
             android:layout_marginLeft="35dp"
             android:textColor="#FFFFFF"
             android:fontFamily="sans-serif-smallcaps"
@@ -36,8 +37,20 @@
             android:textStyle="bold"
             android:text="A. D. B. Campo"
 
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
+            android:layout_marginTop="15dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/info"
+            android:text="Insira um colaborador"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/info1"
+            android:layout_marginTop="75dp"
+            android:gravity="center_horizontal"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-smallcaps" />
 
     </RelativeLayout>
 
@@ -48,7 +61,7 @@
         android:layout_height="match_parent"
         android:id="@+id/secondLayout"
         android:layout_below="@id/firstLayout"
-        android:layout_marginTop="75dp">
+        android:layout_marginTop="25dp">
 
 
     <!-- NAME -->
@@ -57,7 +70,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/name"
 
-        android:hint="Your Full Name"
+        android:hint="Insira o nome do colaborador"
         android:textColorHint="#FFFFFF"
         android:textColor="#FFFFFF"
         android:backgroundTint="#FFFFFF"
@@ -105,8 +118,22 @@
         android:backgroundTint="#FFFFFF"
         android:layout_marginRight="15dp"
         android:layout_marginLeft="15dp"
-        android:hint="Mobile Number"
+        android:hint="Número de telemovel"
         android:maxLength="9"/>
+
+        <!-- CARGO -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cargo"
+            android:layout_below="@+id/numberId"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Cargo do colaborador"/>
 
     <!-- BOTÃO -->
     <Button
@@ -114,7 +141,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnregist"
         android:onClick="btnregist"
-        android:layout_below="@+id/numberId"
+        android:layout_below="@+id/cargo"
         android:hint=" Adicionar "
         android:textSize="18dp"
         android:fontFamily="monospace"

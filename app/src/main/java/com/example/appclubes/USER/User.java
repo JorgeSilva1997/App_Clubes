@@ -10,12 +10,13 @@ public class User {
     private String email;
     private int tipo;
     private String KeyUser;
+    private String cargo;
 
     public User() {
 
     }
 
-    public User(String numberId, String name, String password, String email, int tipo, String KeyUser){
+    public User(String numberId, String name, String password, String email, int tipo, String KeyUser, String cargo){
 
         this.numberId = numberId;
         this.name = name;
@@ -23,6 +24,7 @@ public class User {
         this.email = email;
         this.tipo = tipo;
         this.KeyUser = KeyUser;
+        this.cargo = cargo;
     }
 
 
@@ -63,4 +65,7 @@ public class User {
 
     public String getKeyUser() {return KeyUser;}
     public void setKeyUser(String KeyUser) {this.KeyUser = KeyUser;}
+
+    public String getCargo() {return cargo;}
+    public void setCargo(String cargo) {this.cargo = cargo;}
 }

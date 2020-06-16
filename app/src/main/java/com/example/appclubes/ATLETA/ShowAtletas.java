@@ -12,9 +12,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.appclubes.CONVOCATORIA.AddConvocatoria;
-import com.example.appclubes.ESCALAO.Escalao;
-import com.example.appclubes.MyArrayAdapterAtletas;
 import com.example.appclubes.R;
 import com.firebase.ui.database.FirebaseListAdapter;
 import com.firebase.ui.database.FirebaseListOptions;
@@ -28,7 +25,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ShowAtletas extends AppCompatActivity {
