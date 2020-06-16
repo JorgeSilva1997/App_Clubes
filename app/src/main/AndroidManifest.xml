@@ -36,6 +36,13 @@
         <activity android:name=".ATLETA.ListAtleta" />
         <activity android:name=".CAMPEONATO.ChooseOptionCamp"/>
         <activity android:name=".CAMPEONATO.ListCamp" />
+        <activity android:name=".EQUIPA.ChooseEquipa" />
+        <activity android:name=".EQUIPA.ListEquipa" />
+        <activity android:name=".ESCALAO.ChooseEscalao" />
+        <activity android:name=".ESCALAO.ListEscalao" />
+        <activity android:name=".ATLETA.Edit_Atleta" />
+        <activity android:name=".ADMIN.ChooseOptionAdmin" />
+        <activity android:name=".ADMIN.ListAllUser" />
     </application>
 
 </manifest>

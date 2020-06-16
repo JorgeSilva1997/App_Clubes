@@ -28,7 +28,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class AddAtleta extends AppCompatActivity {
 
@@ -40,7 +42,6 @@ public class AddAtleta extends AppCompatActivity {
     private Spinner spinner;
     private Escalao escalao;
     private String xpto1;
-    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +124,16 @@ public class AddAtleta extends AppCompatActivity {
             atleta.setKeyAtleta(key);
             reference.child(key).setValue(atleta);
             Toast.makeText(AddAtleta.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
+
+/*
+            String key1 = ConfiguraçãoFirebase.getReference().child("atleta").push().getKey();
+            Atleta atleta1 = new Atleta(keyAtleta, nome, escalao);
+            Map<String, Object> postValues = atleta1.toMap();
+            Map<String, Object> childUpdates = new HashMap<>();
+            childUpdates.put("/atleta/" + key1, postValues);
+            childUpdates.put("/user-posts/" + userId + "/" + key, postValues);
+*/
+
             return true;
         }   catch (Exception e){
             Toast.makeText(AddAtleta.this, "Erro ao inserir!", Toast.LENGTH_LONG).show();

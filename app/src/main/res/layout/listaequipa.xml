@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ATLETA.ShowAtletas"
+    tools:context=".EQUIPA.ListEquipa"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/welcome"
-            android:text="Atletas do clube"
+            android:text="As suas equipas"
             android:layout_below="@id/imgLogo"
             android:textColor="#FFFFFF"
             android:layout_marginTop="50dp"
@@ -76,7 +76,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/listAtletas"
+            android:id="@+id/listEquipa"
             android:textColor="#FFFFFF"
             android:outlineAmbientShadowColor="#FFFFFF"
             android:outlineSpotShadowColor="#FFFFFF"
@@ -86,13 +86,4 @@
 
     </RelativeLayout>
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="6dp"
-        android:spinnerMode="dropdown"
-        android:background="@android:drawable/btn_dropdown"/>
 </RelativeLayout>

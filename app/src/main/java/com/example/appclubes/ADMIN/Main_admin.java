@@ -16,7 +16,9 @@ import com.example.appclubes.CAMPEONATO.AddCampeonato;
 import com.example.appclubes.CAMPEONATO.ChooseOptionCamp;
 import com.example.appclubes.CONVOCATORIA.AddConvocatoria;
 import com.example.appclubes.EQUIPA.AddEquipa;
+import com.example.appclubes.EQUIPA.ChooseEquipa;
 import com.example.appclubes.ESCALAO.AddEscalao;
+import com.example.appclubes.ESCALAO.ChooseEscalao;
 import com.example.appclubes.Info;
 import com.example.appclubes.Login;
 import com.example.appclubes.Perfil;
@@ -90,7 +92,7 @@ public class Main_admin extends AppCompatActivity {
         }
         else if (id == R.id.addEscalao)
         {
-            Intent intent = new Intent(Main_admin.this, AddEscalao.class);
+            Intent intent = new Intent(Main_admin.this, ChooseEscalao.class);
             startActivity(intent);
         }
         else if (id == R.id.perfil)
@@ -100,7 +102,7 @@ public class Main_admin extends AppCompatActivity {
         }
         else if (id == R.id.addAdmin)
         {
-            Intent intent = new Intent(Main_admin.this, Regist_Admin.class);
+            Intent intent = new Intent(Main_admin.this, ChooseOptionAdmin.class);
             startActivity(intent);
         }
         else if (id == R.id.infoProg)
@@ -115,7 +117,7 @@ public class Main_admin extends AppCompatActivity {
         }
         else if (id == R.id.addEquipa)
         {
-            Intent intent = new Intent(Main_admin.this, AddEquipa.class);
+            Intent intent = new Intent(Main_admin.this, ChooseEquipa.class);
             startActivity(intent);
         }
 

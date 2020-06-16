@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ATLETA.Edit_Atleta"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="25dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/imgLogo"
+            android:layout_marginLeft="35dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome"
+            android:text="Bem vindo à pagina de administrador"
+            android:layout_below="@id/imgLogo"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="50dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_marginLeft="25dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTipoAdmin"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:layout_below="@id/welcome"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="5dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps" />
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="25dp">
+
+        <!-- NAME -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Nome"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+
+            android:id="@+id/InfoName"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoName"
+            android:textSize="16dp"
+
+            android:id="@+id/Name"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Name"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line1"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+        <!-- ESCALAO -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Escalão"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12dp"
+            android:layout_marginLeft="10dp"
+            android:alpha=".75"
+            android:layout_below="@id/line1"
+            android:layout_marginTop="22dp"
+
+            android:id="@+id/InfoEmail"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:text=""
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:layout_below="@id/InfoEmail"
+            android:textSize="16dp"
+            android:inputType="textEmailAddress"
+
+            android:id="@+id/Escalao"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_below="@id/Escalao"
+            android:layout_marginLeft="7dp"
+            android:id="@+id/line2"
+            android:alpha=".50"
+            android:layout_height="1dp"
+            android:background="#FFFFFF"/>
+
+
+        <!-- BOTÃO -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnedit"
+            android:onClick="btnedit"
+            android:hint=" Edit "
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:textColorHint="#FFFFFF"
+            android:background="@drawable/btn_border"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+
+            android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

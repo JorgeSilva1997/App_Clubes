@@ -59,7 +59,9 @@ public class AddEquipa extends AppCompatActivity {
 
 
             reference = ConfiguraçãoFirebase.getReference().child("equipa");
-            reference.push().setValue(equipa);
+            String key = reference.push().getKey();
+            equipa.setKeyAtleta(key);
+            reference.child(key).setValue(equipa);
             Toast.makeText(AddEquipa.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
             return true;
         }   catch (Exception e){

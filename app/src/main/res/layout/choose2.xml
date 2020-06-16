@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ATLETA.ShowAtletas"
+    tools:context=".EQUIPA.ChooseEquipa"
     android:background="@mipmap/fundo">
 
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/welcome"
-            android:text="Atletas do clube"
+            android:text="Escolha uma das opções"
             android:layout_below="@id/imgLogo"
             android:textColor="#FFFFFF"
             android:layout_marginTop="50dp"
@@ -65,34 +65,44 @@
 
     <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/firstLayout"
-        android:layout_marginTop="12dp"
-        android:layout_marginRight="22dp"
-        android:layout_marginLeft="22dp">
 
-        <ListView
+    <!-- BOTÕES -->
+
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_below="@id/firstLayout"
+        android:layout_marginTop="75dp"
+        android:layout_marginRight="75dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAlignment="center">
+
+        <Button
+            android:id="@+id/btnaddequipa"
+            android:onClick="btnaddequipa"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listAtletas"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/btn_border"
             android:textColor="#FFFFFF"
-            android:outlineAmbientShadowColor="#FFFFFF"
-            android:outlineSpotShadowColor="#FFFFFF"
-            android:cacheColorHint="@android:color/transparent"
-            android:divider="#FFFFFF"
-            android:dividerHeight="2dp"/>
+            android:textSize="18dp"
+            android:text="Adicionar Equipa" />
+
+        <Button
+            android:id="@+id/btnlistequipa"
+            android:onClick="btnlistequipa"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/btnaddequipa"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:textSize="18dp"
+            android:text="Listar Equipas" />
+
 
     </RelativeLayout>
-
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="6dp"
-        android:spinnerMode="dropdown"
-        android:background="@android:drawable/btn_dropdown"/>
 </RelativeLayout>
