@@ -35,32 +35,6 @@
             android:text="A. D. B. Campo"
             android:layout_marginTop="15dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/welcome"
-            android:text="Bem vindo à pagina de administrador"
-            android:layout_below="@id/imgLogo"
-            android:textColor="#FFFFFF"
-            android:layout_marginTop="50dp"
-            android:textSize="18dp"
-            android:fontFamily="sans-serif-smallcaps"
-            android:layout_marginLeft="25dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtTipoAdmin"
-            android:text=""
-            android:textColor="#FFFFFF"
-            android:textColorHint="#FFFFFF"
-            android:layout_below="@id/welcome"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="5dp"
-            android:textSize="18dp"
-            android:fontFamily="sans-serif-smallcaps" />
-
     </RelativeLayout>
 
     <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->

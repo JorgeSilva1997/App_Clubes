@@ -24,7 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 public class ListAtleta extends AppCompatActivity {
@@ -33,10 +35,9 @@ public class ListAtleta extends AppCompatActivity {
     FirebaseListAdapter adapter;
     private FirebaseAuth auth;
     private DatabaseReference reference;
-    private String TipoUserEmail;
-    private TextView tipoUser;
+    private String TipoUserEmail, key;
+    private TextView tipoUser, NomedoAtleta, EscalaodoAtleta;
     Map<String, Object> mapAtletas = new HashMap<>();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +49,11 @@ public class ListAtleta extends AppCompatActivity {
         reference = FirebaseDatabase.getInstance().getReference();
         registerForContextMenu(lista);
 
+        NomedoAtleta = (TextView)findViewById(R.id.NomedoAtleta);
+        EscalaodoAtleta = (TextView)findViewById(R.id.EscalaodoAtleta);
+
         Default();
+
     }
 
     @Override
@@ -84,11 +89,13 @@ public class ListAtleta extends AppCompatActivity {
                 NomedoAtleta.setText(atleta.getNome());
                 EscalaodoAtleta.setText(atleta.getEscalao());
 
+                String key = atleta.getKeyAtleta();
 
                 //Writing Hashmap
 
                 mapAtletas.put("nome", NomedoAtleta);
                 mapAtletas.put("escalao", EscalaodoAtleta);
+                mapAtletas.put("keyatleta", key);
 
             }
         };
@@ -112,27 +119,27 @@ public class ListAtleta extends AppCompatActivity {
         Context mContext = this;
         switch (item.getItemId()) {
             case R.id.editar:
-                //Intent intent = new Intent(ListAtleta.this, Edit_Atleta.class);
+
                 int itemPosition = info.position;
 
+
                 Toast.makeText(ListAtleta.this, "" + itemPosition, Toast.LENGTH_SHORT).show();
-
-                //String key = arrayEquipa.get(itemPosition).ID;
-
-                Atleta atleta = new Atleta();
-
+/*
                 Intent intent = new Intent(ListAtleta.this, Edit_Atleta.class);
                 Bundle bundle = new Bundle();
 
+                String nome = NomedoAtleta.getText().toString();
+                String escalao = EscalaodoAtleta.getText().toString();
+
                 bundle.putString("origem", "editAtleta");
 
-                bundle.putString("nome", atleta.getNome());
-                bundle.putString("escalao", atleta.getEscalao());
-                bundle.putString("KeyAtleta", atleta.getKeyAtleta());
+                bundle.putString("nome", nome);
+                bundle.putString("escalao", escalao);
+                bundle.putString("KeyAtleta", key);
 
                 intent.putExtras(bundle);
                 startActivity(intent);
-                finish();
+                finish(); */
                 return true;
 
 

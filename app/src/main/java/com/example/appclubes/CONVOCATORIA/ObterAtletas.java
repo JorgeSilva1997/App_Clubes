@@ -3,7 +3,9 @@ package com.example.appclubes.CONVOCATORIA;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ListView;
@@ -71,7 +73,7 @@ public class ObterAtletas extends AppCompatActivity {
 
 
         // Teste
-        //addListenerOnButtonClick();
+        addListenerOnButtonClick();
     }
 
     @Override
@@ -107,27 +109,30 @@ public class ObterAtletas extends AppCompatActivity {
         };
         lista.setAdapter(adapter);
     }
-    /*
+
         public void addListenerOnButtonClick(){
+
             //Getting instance of CheckBoxes and Button from the activty_main.xml file
             checkBoxAtleta=(CheckBox)findViewById(R.id.checkBoxAtleta);
             Button btn = (Button) findViewById(R.id.AddAtleta);
 
+            Toast.makeText(ObterAtletas.this, "Hello", Toast.LENGTH_SHORT).show();
             //Applying the Listener on the Button click
             btn.setOnClickListener(new View.OnClickListener(){
 
                 @Override
                 public void onClick(View view) {
-                    int totalamount=0;
+
+                    boolean checked = ((CheckBox) view).isChecked();
                     StringBuilder result=new StringBuilder();
-                    result.append("Selected Items:");
-                    if(checkBoxAtleta.isChecked()){
-                        result.append("\nPizza 100Rs");
-                        totalamount+=100;
+                    result.append("Atletas Selecionados:");
+
+                    if (checked) {
+                        result.append("\nTeste");
                     }
-                    result.append("\nTotal: "+totalamount+"Rs");
+
                     //Displaying the message on the toast
-                    Toast.makeText(getApplicationContext(), resu.toString(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_LONG).show();
                 }
 
             });

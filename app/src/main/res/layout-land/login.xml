@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Login"
@@ -9,32 +9,29 @@
     <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/firstLayout"
-        android:layout_marginTop="45dp"
-        android:layout_marginRight="35dp"
-        android:layout_marginLeft="25dp">
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/imgLogo"
-            android:src="@mipmap/adbcampo"/>
+            android:src="@mipmap/adbcampo"
+            android:layout_centerHorizontal="true"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/imgLogo"
-            android:layout_marginLeft="35dp"
+            android:layout_below="@id/imgLogo"
+            android:layout_marginTop="25dp"
             android:textColor="#FFFFFF"
             android:fontFamily="sans-serif-smallcaps"
             android:textSize="26dp"
             android:textStyle="bold"
-            android:text="A. D. B. Campo"
-
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
+            android:text="A. D. B. Campo" />
 
     </RelativeLayout>
 
@@ -43,13 +40,14 @@
     <!-- CÓDIGO IGUAL PARA TODAS AS EQUIPAS -->
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/secondLayout"
-        android:layout_below="@id/firstLayout"
-        android:layout_marginTop="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/SecondtLayout"
+        android:layout_toRightOf="@id/firstLayout"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="75dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="45dp">
 
         <!-- CAMPO USERNAME -->
 
@@ -69,9 +67,7 @@
             android:textColorHint="#FFFFFF"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FFFFFF"
-            android:inputType="text"
-            android:layout_marginRight="75dp"
-            android:layout_marginLeft="75dp"/>
+            android:inputType="text"/>
 
         <!-- FIM DO CAMPO USERNAME -->
 
@@ -96,43 +92,51 @@
             android:inputType="textPassword"
             android:textColorHint="#FFFFFF"
             android:textColor="#FFFFFF"
-            android:backgroundTint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"/>
 
-            android:layout_marginRight="75dp"
-            android:layout_marginLeft="75dp"/>
-
-        <!-- FIM DO CAMPO USERNAME -->
+        <!-- FIM DO CAMPO PASSWORD -->
 
         <!-- BOTÕES -->
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/pass"
             android:id="@+id/btnLogin"
             android:onClick="btnLogin"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="40dp"
             android:hint=" Log In "
             android:fontFamily="monospace"
             android:textColorHint="#FFFFFF"
             android:textSize="20dp"
             android:background="@drawable/btn_border"
-            android:layout_marginRight="75dp"
-            android:layout_marginLeft="75dp"/>
+            android:layout_toLeftOf="@id/help"
+            android:layout_marginRight="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/help"
+            android:textColor="#FFFFFF"
+            android:text=""
+            android:layout_below="@id/pass"
+            android:layout_marginTop="45dp"
+            android:layout_centerHorizontal="true"/>
 
         <Button
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnLogin"
+            android:layout_below="@id/pass"
             android:id="@+id/btnResgist"
             android:onClick="btnRegist"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="40dp"
             android:hint=" Regist "
             android:fontFamily="monospace"
             android:textColorHint="#FFFFFF"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:background="@drawable/btn_border"
-            android:layout_marginRight="90dp"
-            android:layout_marginLeft="90dp"/>
+            android:layout_toRightOf="@id/help"
+
+            android:layout_marginLeft="6dp"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -147,11 +151,6 @@
             android:textColorHint="#FFFFFF"
             android:textSize="16dp" />
 
-
-
-
     </RelativeLayout>
-
-    <!-- FIM CÓDIGO -->
 
 </RelativeLayout>

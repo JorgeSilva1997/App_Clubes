@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".USER.Regist"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info1"
+            android:layout_below="@id/imgLogo"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo" />
+
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <!-- CÓDIGO IGUAL PARA TODAS AS EQUIPAS -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/SecondtLayout"
+        android:layout_toRightOf="@id/firstLayout"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="55dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginBottom="15dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info"
+            android:text="Insira um colaborador"
+            android:textColor="#FFFFFF"
+            android:gravity="center_horizontal"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_centerHorizontal="true"/>
+
+        <!-- NAME -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_below="@id/info"
+            android:layout_marginTop="6dp"
+
+            android:hint="Insira o nome do colaborador"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="text"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <!-- PASSWORD -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/password"
+            android:layout_below="@+id/name"
+            android:hint="Password"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="textPassword"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"/>
+
+        <!-- MAIL -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/email"
+            android:layout_below="@+id/password"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:inputType="textEmailAddress"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Email Address"/>
+
+        <!-- NUMBER -->
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberId"
+            android:layout_below="@+id/email"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginLeft="15dp"
+            android:hint="Número de telemovel"
+            android:maxLength="9"/>
+
+        <!-- CARGO -->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cargo"
+            android:layout_below="@id/email"
+            android:layout_toRightOf="@id/numberId"
+            android:inputType="number"
+            android:textColorHint="#FFFFFF"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="10dp"
+            android:hint="Cargo do colaborador"/>
+
+        <!-- BOTÃO -->
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnregist"
+            android:onClick="btnregist"
+            android:layout_below="@+id/cargo"
+            android:hint=" Adicionar "
+            android:textSize="18dp"
+            android:fontFamily="monospace"
+            android:textColorHint="#FFFFFF"
+            android:background="@drawable/btn_border"
+            android:layout_marginTop="45dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".USER.Main"
+    android:background="@mipmap/fundo">
+
+    <!--    CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLayout"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="50dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgLogo"
+            android:src="@mipmap/adbcampo"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/info1"
+            android:layout_below="@id/imgLogo"
+            android:layout_marginTop="25dp"
+            android:textColor="#FFFFFF"
+            android:fontFamily="sans-serif-smallcaps"
+            android:textSize="26dp"
+            android:textStyle="bold"
+            android:text="A. D. B. Campo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/welcome"
+            android:text="Bem vindo "
+            android:layout_below="@id/info1"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="25dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtTipoUser"
+            android:text=""
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:layout_below="@id/welcome"
+            android:layout_marginTop="6dp"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+    <!--    FIM CÓDIGO PARA LOGOTIPO DE EQUIPAS  -->
+
+    <!-- BOTÕES -->
+
+    <RelativeLayout
+        android:id="@+id/secondLayout"
+        android:layout_toRightOf="@id/firstLayout"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="55dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <Button
+            android:id="@+id/jogos"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Jogos" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/jogos"
+            android:layout_toRightOf="@id/jogos"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Convocatorias" />
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/jogos"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Resultados"/>
+
+        <Button
+            android:id="@+id/btn5"
+            android:onClick="btnPerfil"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_alignBottom="@+id/btn4"
+            android:layout_toRightOf="@id/btn4"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Perfil"/>
+
+        <Button
+            android:id="@+id/btn7"
+            android:onClick="btnShowAtletas"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@+id/btn2"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Atletas"/>
+
+        <Button
+            android:id="@+id/btn8"
+            android:onClick="btnDirecao"
+            android:layout_width="140dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@id/btn5"
+            android:layout_below="@id/btn7"
+            android:layout_marginTop="6dp"
+            android:background="@drawable/btn_border"
+            android:textColor="#FFFFFF"
+            android:text="Direção"/>
+
+</RelativeLayout>
+</RelativeLayout>

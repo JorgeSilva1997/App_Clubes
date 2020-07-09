@@ -29,7 +29,7 @@ public class Edit_Atleta extends AppCompatActivity {
     private String origem = "";
     private String nome = "";
     private String escalao = "";
-    private String keyatleta = "";
+    private String KeyAtleta = "";
 
     private DatabaseReference myRef;
     private FirebaseAuth auth;
@@ -55,7 +55,7 @@ public class Edit_Atleta extends AppCompatActivity {
         {
             nome = bundle.getString("nome");
             escalao = bundle.getString("escalao");
-            keyatleta = bundle.getString("KeyAtleta");
+            KeyAtleta = bundle.getString("KeyAtleta");
 
             Name.setText(nome);
             Escalao.setText(escalao);
@@ -85,7 +85,7 @@ public class Edit_Atleta extends AppCompatActivity {
             Atleta atleta = new Atleta();
             atleta.setNome(Name.getText().toString());
             atleta.setEscalao(Escalao.getText().toString());
-            atleta.setKeyAtleta(keyatleta);
+            atleta.setKeyAtleta(KeyAtleta);
 
             updateAtleta();
         }
@@ -98,7 +98,7 @@ public class Edit_Atleta extends AppCompatActivity {
         try {
 
             myRef = ConfiguraçãoFirebase.getReference().child("atleta");
-            myRef.child(keyatleta).setValue(atleta);
+            myRef.child(KeyAtleta).setValue(atleta);
             Toast.makeText(Edit_Atleta.this, "Inserido com sucesso!", Toast.LENGTH_LONG).show();
             return true;
         }   catch (Exception e){

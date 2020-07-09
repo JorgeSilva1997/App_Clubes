@@ -9,10 +9,12 @@
 
     <RelativeLayout
         android:id="@+id/a"
-        android:layout_width="100sp"
+        android:layout_width="75dp"
         android:layout_height="match_parent"
         android:alpha=".80"
         android:background="@mipmap/orange"></RelativeLayout>
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -23,41 +25,44 @@
         android:alpha="1">
 
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/imgProfile"
             android:src="@mipmap/person1"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="25dp"/>
-
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/name"
-            android:text=""
-            android:layout_below="@id/imgProfile"
-            android:layout_marginTop="20dp"
+            android:text="Jorge Silva"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginTop="60dp"
             android:textColor="#FFFFFF"
             android:textSize="28dp"
             android:textStyle="bold"
-            android:layout_centerHorizontal="true"
-            android:gravity="center_horizontal"/>
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"/>
 
         <View
             android:layout_width="match_parent"
-            android:layout_below="@id/name"
-            android:layout_marginTop="55dp"
+            android:layout_below="@id/imgProfile"
+            android:layout_marginTop="15dp"
             android:id="@+id/line1"
             android:alpha=".75"
             android:layout_height="1dp"
-            android:background="@mipmap/orange"/>
+            android:background="@mipmap/orange"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginLeft="8dp"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/mailIcon"
             android:layout_below="@id/line1"
+            android:layout_toRightOf="@id/imgProfile"
             android:src="@drawable/mail"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"/>
@@ -70,6 +75,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:layout_below="@id/line1"
+            android:layout_toRightOf="@id/mailIcon"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_marginTop="8dp"
@@ -84,13 +90,16 @@
             android:id="@+id/line2"
             android:alpha=".75"
             android:layout_height="1dp"
-            android:background="@mipmap/orange"/>
+            android:background="@mipmap/orange"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginLeft="8dp"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/phoneIcon"
             android:layout_below="@id/line2"
+            android:layout_toRightOf="@id/imgProfile"
             android:src="@drawable/phone"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"/>
@@ -103,6 +112,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:layout_below="@id/line2"
+            android:layout_toRightOf="@id/phoneIcon"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_marginTop="8dp"
@@ -118,13 +128,16 @@
             android:id="@+id/line3"
             android:alpha=".75"
             android:layout_height="1dp"
-            android:background="@mipmap/orange"/>
+            android:background="@mipmap/orange"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginLeft="8dp"/>
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/passIcon"
             android:layout_below="@id/line3"
+            android:layout_toRightOf="@id/imgProfile"
             android:src="@drawable/pass"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="8dp"/>
@@ -138,6 +151,7 @@
             android:textColor="#FFFFFF"
             android:textSize="18dp"
             android:layout_below="@id/line3"
+            android:layout_toRightOf="@id/passIcon"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_marginTop="8dp"
@@ -150,7 +164,9 @@
             android:id="@+id/line4"
             android:alpha=".75"
             android:layout_height="1dp"
-            android:background="@mipmap/orange"/>
+            android:background="@mipmap/orange"
+            android:layout_toRightOf="@id/imgProfile"
+            android:layout_marginLeft="8dp"/>
 
 
         <!-- Botão para editar perfil -->
@@ -158,41 +174,42 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnEditProfile"
-            android:onClick="btnEditProfile"
-            android:hint="    Edit Profile   "
+            android:id="@+id/btnRemoveProfile"
+            android:onClick="btnRemoveProfile"
+            android:hint="    Remove Profile   "
             android:textSize="16dp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textColorHint="#1E90FF"
+            android:textColorHint="#FF0000"
             android:layout_alignParentBottom="true"
             android:background="@drawable/btn_border"
 
             android:layout_alignParentLeft="true"
             android:layout_marginLeft="6dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"/>
 
         <!-- Botão para remover perfil -->
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btnRemoveProfile"
-            android:onClick="btnRemoveProfile"
-            android:layout_toRightOf="@id/btnEditProfile"
-            android:hint="Remove Profile"
+            android:id="@+id/btnEditProfile"
+            android:onClick="btnEditProfile"
+            android:layout_toRightOf="@id/btnRemoveProfile"
+            android:hint="Edit Profile"
             android:textSize="16dp"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textColorHint="#FF0000"
+            android:textColorHint="#1E90FF"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:background="@drawable/btn_border"
 
             android:layout_marginLeft="22dp"
             android:layout_marginRight="6dp"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="25dp"/>
 
     </RelativeLayout>
 
 </RelativeLayout>
+
