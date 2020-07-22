@@ -2,87 +2,46 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="12dp"
-    android:layout_marginRight="12dp"
-    android:layout_marginTop="3dp">
+    android:layout_marginTop="8dp">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/R1"
-        android:layout_toRightOf="@id/R2">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+    <ImageView
+        android:layout_width="77dp"
+        android:layout_height="77dp"
+        android:id="@+id/Icon_person"
+        android:src="@mipmap/kiko"
+        android:alpha=".85"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="6dp"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/NomedoAtleta"
+        android:layout_toRightOf="@id/Icon_person"
         android:text=""
-        android:textColor="#FFFFFF"
         android:textSize="20dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily="sans-serif-smallcaps"/>
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-light"
+        />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/EscalaodoAtleta"
-        android:textColor="#FFFFFF"
+        android:layout_toRightOf="@id/Icon_person"
+        android:layout_below="@id/NomedoAtleta"
         android:text=""
-        android:textSize="20dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:alpha=".65"/>
+        android:textSize="14dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:alpha=".75"
+        android:textColor="#FFFFFF"
+        android:textStyle="normal"
+        android:fontFamily="sans-serif-light"/>
 
-
-
-</LinearLayout>
-</RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/R2"
-        android:layout_marginLeft="6dp">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/infoNome"
-                android:text="Nome:"
-                android:textColor="#DC6416"
-                android:textSize="20dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="sans-serif-smallcaps"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/infoEscalão"
-                android:textColor="#DC6416"
-                android:text="Escalão:"
-                android:textSize="20dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="10dp"
-                android:fontFamily="sans-serif-smallcaps"/>
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
 </RelativeLayout>

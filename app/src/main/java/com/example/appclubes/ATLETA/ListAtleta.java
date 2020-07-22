@@ -124,6 +124,34 @@ public class ListAtleta extends AppCompatActivity {
 
 
                 Toast.makeText(ListAtleta.this, "" + itemPosition, Toast.LENGTH_SHORT).show();
+
+
+                for (String key : mapAtletas.keySet()) {
+
+                //Capturamos o valor a partir da chave
+                Object value = mapAtletas.get(key);
+                System.out.println(key + " = " + value);
+                    //Toast.makeText(ListAtleta.this, key + " = " + value, Toast.LENGTH_SHORT).show();
+
+                    if (key == "keyatleta")
+                    {
+                        String keyAtleta = (String) value;
+                        //Toast.makeText(ListAtleta.this, "" + keyAtleta, Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(ListAtleta.this, Edit_Atleta.class);
+                        Bundle bundle = new Bundle();
+
+
+                        bundle.putString("origem", "editAtleta");
+
+                        bundle.putString("KeyAtleta", keyAtleta);
+
+                        intent.putExtras(bundle);
+                        startActivity(intent);
+                        finish();
+                    }
+            }
+
 /*
                 Intent intent = new Intent(ListAtleta.this, Edit_Atleta.class);
                 Bundle bundle = new Bundle();

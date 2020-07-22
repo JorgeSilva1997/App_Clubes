@@ -71,8 +71,8 @@
         android:layout_height="match_parent"
         android:layout_below="@id/firstLayout"
         android:layout_marginTop="12dp"
-        android:layout_marginRight="22dp"
-        android:layout_marginLeft="22dp">
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp">
 
         <ListView
             android:layout_width="match_parent"

@@ -67,7 +67,7 @@
             android:textColorHint="#FFFFFF"
             android:textColor="#FFFFFF"
             android:backgroundTint="#FFFFFF"
-            android:inputType="text"/>
+            android:inputType="textEmailAddress"/>
 
         <!-- FIM DO CAMPO USERNAME -->
 

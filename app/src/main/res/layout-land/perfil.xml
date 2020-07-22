@@ -172,7 +172,7 @@
         <!-- Botão para editar perfil -->
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnRemoveProfile"
             android:onClick="btnRemoveProfile"
@@ -181,33 +181,34 @@
             android:fontFamily="sans-serif"
             android:textStyle="bold"
             android:textColorHint="#FF0000"
-            android:layout_alignParentBottom="true"
             android:background="@drawable/btn_border"
+            android:layout_below="@id/btnEditProfile"
 
             android:layout_alignParentLeft="true"
-            android:layout_marginLeft="6dp"
-            android:layout_marginBottom="25dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="5dp"/>
 
         <!-- Botão para remover perfil -->
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/btnEditProfile"
-            android:onClick="btnEditProfile"
-            android:layout_toRightOf="@id/btnRemoveProfile"
-            android:hint="Edit Profile"
-            android:textSize="16dp"
-            android:fontFamily="sans-serif"
-            android:textStyle="bold"
-            android:textColorHint="#1E90FF"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:background="@drawable/btn_border"
-
-            android:layout_marginLeft="22dp"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgProfile"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginRight="6dp"
-            android:layout_marginBottom="25dp"/>
+            android:background="@drawable/btn_border"
+            android:fontFamily="sans-serif"
+            android:hint="    Edit Profile   "
+            android:onClick="btnEditProfile"
+
+            android:textColorHint="#1E90FF"
+            android:textSize="16dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
